@@ -4,12 +4,16 @@ let currentPage = 1;
 const PER_PAGE = 12;
 
 async function loadData() {
-  const res = await fetch('objects.json');
-  const data = await res.json();
-  OBJECTS = data.objects || data;
-  filtered = Object.entries(OBJECTS).map(([id, o]) => ({ id, ...o }));
-  renderStats();
-  renderCards();
+  try {
+    const res = await fetch('objects.json');
+    const data = await res.json();
+    OBJECTS = data.objects || data;
+    filtered = Object.entries(OBJECTS).map(([id, o]) => ({ id, ...o }));
+    renderStats();
+    renderCards();
+  } catch (e) {
+    console.error('Failed to load objects.json', e);
+  }
 }
 
 function renderStats() {
