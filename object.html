@@ -57,6 +57,22 @@ fetch('objects.json').then(r => r.json()).then(data => {
     `;
   }
 
+  // НОВЫЙ БЛОК РЕШЕНИЙ
+  let solutionsHtml = '';
+  if (o.solutions && o.solutions.length > 0) {
+    solutionsHtml = `
+      <div class="detail-block" style="border-left: 4px solid var(--green);">
+        <h3>Ways to Fix (Solutions)</h3>
+        <table style="width:100%;">
+          <thead><tr><th>Option</th><th>Type</th><th>Effect</th><th>Cost</th></tr></thead>
+          <tbody>
+            ${o.solutions.map(s => `<tr><td>${s.name}</td><td>${s.type}</td><td>${s.effect}</td><td>${s.cost}</td></tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
   el.innerHTML = `
     <h1>${o.title}</h1>
     <span class="status-badge ${o.status}">${badge}</span>
@@ -70,6 +86,9 @@ fetch('objects.json').then(r => r.json()).then(data => {
     <div class="detail-block"><h3>Companies</h3><p>${(o.companies||[]).join(' · ')}</p></div>
     
     ${docsHtml}
+    
+    <!-- БЛОК РЕШЕНИЙ -->
+    ${solutionsHtml}
     
     <p><a href="index.html">← Back to list</a> · <a href="map.html">Map</a></p>
   `;
