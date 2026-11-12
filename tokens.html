@@ -6,75 +6,63 @@
 <header>
   <div class="logo">Oil & Gas Ecology Map</div>
   <nav>
-    <a href="index.html">Home</a><a href="map.html">Map</a>
-    <a href="methodology.html">Methodology</a><a href="dashboard.html">Dashboard</a>
-    <a href="tokens.html" class="active">Tokens & Pay</a><a href="treasury.html">Treasury</a>
-    <a href="signal.html">Signal</a><a href="response.html">Right of Reply</a>
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="rwa.html">RWA & Liquidity</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tokens.html" class="active">Tokens & Pay</a>
+    <a href="treasury.html">Treasury</a>
   </nav>
 </header>
 <main>
 <h1>Tokens & Contributions</h1>
-<p style="color:var(--muted);max-width:800px;">We do not sell investments. We accept contributions in specific tokens to cover verification costs. These tokens are used as <strong>receipts</strong> to track the route of your contribution to a specific project.</p>
+<p style="color:var(--muted);max-width:800px;">
+  We do not sell speculative investments. We issue <strong>RWA Impact Tokens</strong> (Real World Assets) that act as digital receipts for funding specific environmental solutions.
+</p>
 
-<h2>Accepted Tokens (Solana Network)</h2>
+<h2>Accepted Tokens for Contributions (Solana)</h2>
 <table>
-  <thead><tr><th>Token</th><th>Contract Address</th><th>Purpose</th></tr></thead>
+  <thead><tr><th>Token</th><th>Contract Address</th><th>Use Case</th></tr></thead>
   <tbody>
-    <tr><td><strong>€20</strong></td><td><code>EVr3k6rruveLtQiLadvNiKhK8e4WecnLHZxhcJwRDuTg</code></td><td>Standard contribution</td></tr>
+    <tr><td><strong>€20 (EUR RWA)</strong></td><td><code>EVr3k6rruveLtQiLadvNiKhK8e4WecnLHZxhcJwRDuTg</code></td><td>Standard contribution</td></tr>
     <tr><td><strong>$ONE</strong></td><td><code>CGn6yYGTUkctq9PqDdK6ALgfxTS1vTBr9NWBPuoNYmad</code></td><td>General support</td></tr>
-    <tr><td><strong>USDT (SPL)</strong></td><td><em>Standard Solana USDT</em></td><td>Stable value</td></tr>
-    <tr><td><strong>SOL</strong></td><td><em>Native Solana</em></td><td>Direct network fee coverage</td></tr>
+    <tr><td><strong>USDT (SPL)</strong></td><td><em>Standard Solana USDT</em></td><td>Stable value funding</td></tr>
   </tbody>
 </table>
 
-<h2>How to Contribute</h2>
+<h2>How to Fund a Solution</h2>
 <div class="detail-block">
-  <h3>1. Choose a Token</h3>
-  <p>Select one of the accepted tokens above. You can buy them on any major exchange (Binance, Bybit, etc.) and withdraw to your personal wallet (Phantom, Solflare).</p>
-  <h3>2. Send to Treasury</h3>
-  <p>Send the tokens to our official Treasury wallets:</p>
+  <h3>1. Choose a Project</h3>
+  <p>Go to the <a href="rwa.html">RWA & Liquidity page</a> and pick a project that needs funding (e.g., Flare Capture in Nigeria).</p>
+  
+  <h3>2. Send Tokens to Treasury</h3>
+  <p>Send the required tokens (USDT, €20, or $ONE) to our official Treasury wallets:</p>
   <ul>
     <li><strong>Wallet 1:</strong> <code>4ovcwwTKYuCynQacrt8omamhjfkWo29A6iJBDYAbpSiB</code></li>
     <li><strong>Wallet 2:</strong> <code>GRj75Ux6we8j9W2fa7kTiUtdNvFFXv7RqGDybJy2HoSs</code></li>
   </ul>
-  <h3>3. Add a Memo (Important!)</h3>
-  <p>When sending, you <strong>must</strong> include a memo with the Project ID (e.g., <code>MEMO: flare-nigeria</code>). If there is no memo, we cannot link your contribution to a specific project, and it will be returned or held in the general fund.</p>
-  <h3>4. Track Your Transaction</h3>
-  <p>Copy the transaction hash (TxID) from your wallet and paste it into <a href="https://solscan.io" target="_blank">Solscan.io</a> to verify the transfer.</p>
-</div>
 
-<h2>What Happens Next?</h2>
-<table>
-  <thead><tr><th>Step</th><th>Action</th></tr></thead>
-  <tbody>
-    <tr><td>1</td><td>You send tokens with a Memo.</td></tr>
-    <tr><td>2</td><td>Funds arrive at the Public Treasury (multisig).</td></tr>
-    <tr><td>3</td><td>We verify the Memo and link the funds to the project.</td></tr>
-    <tr><td>4</td><td>Funds are sent to the project wallet.</td></tr>
-    <tr><td>5</td><td>Project submits a report (photo + GPS).</td></tr>
-    <tr><td>6</td><td>We publish the report and the status becomes 🟢 Verified.</td></tr>
-  </tbody>
-</table>
+  <h3>3. Add a Memo (Mandatory)</h3>
+  <p>You <strong>must</strong> include a memo with the Project ID and your Solana wallet address to receive the RWA receipt token.</p>
+  <p>Example Memo: <code>ID: flare-nigeria | MY_WALLET: YourSolanaAddressHere</code></p>
+
+  <h3>4. Receive Your RWA Token</h3>
+  <p>Once funds are received by the multisig, we mint your RWA receipt token. You can track the project's progress and the token's status (🟡 Funding → 🟢 Verified) in your Phantom or Solflare wallet.</p>
+</div>
 
 <h2>Important Rules</h2>
 <ul>
-  <li><strong>Not an investment:</strong> These tokens are receipts for contributions. They do not represent equity, profit-sharing, or financial returns.</li>
-  <li><strong>No Memo = No Acceptance:</strong> Contributions without a valid Project ID in the memo will not be processed.</li>
-  <li><strong>Multisig Security:</strong> Treasury funds are held in a multisig wallet. No single person can move them.</li>
-  <li><strong>Right to Refuse:</strong> We do not accept funds from sanctioned entities or for projects without verification.</li>
+  <li><strong>Not an investment:</strong> RWA tokens are proof of donation/impact, not equity or profit-sharing.</li>
+  <li><strong>No Memo = No Token:</strong> Without a project ID and your wallet address, we cannot issue your receipt.</li>
+  <li><strong>Multisig Security:</strong> Funds are held in a 2-of-3 multisig wallet. No single person can move them.</li>
 </ul>
-
-<h2>Need Help?</h2>
-<p>If you have questions about the process or need to verify a token address, contact us directly:</p>
-<p><a href="mailto:ecologyoilgaz@gmail.com?subject=Token%20Question" class="btn-primary">Email Support</a></p>
 </main>
 <footer>
   <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
     <a href="tokens.html">Tokens & Pay</a> ·
     <a href="treasury.html">Treasury (Solana)</a> ·
-    <a href="methodology.html">Methodology</a> ·
-    <a href="signal.html">Submit Signal</a> ·
-    <a href="response.html">Right of Reply</a>
+    <a href="methodology.html">Methodology</a>
   </p>
 </footer>
 </body>
