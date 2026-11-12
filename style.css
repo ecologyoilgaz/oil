@@ -5,7 +5,7 @@ a{color:var(--gold);text-decoration:none;}
 a:hover{text-decoration:underline;}
 header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:30px;flex-wrap:wrap;gap:10px;max-width:1200px;margin-left:auto;margin-right:auto;}
 .logo{font-weight:700;font-size:20px;color:var(--gold);}
-nav{display:flex;gap:16px;flex-wrap:wrap;}
+nav{display:flex;gap:14px;flex-wrap:wrap;}
 nav a{color:var(--muted);font-size:14px;}
 nav a:hover{color:var(--gold);}
 nav a.active{color:var(--gold);border-bottom:2px solid var(--gold);}
@@ -53,5 +53,8 @@ footer a{color:var(--muted);}
 .pagination button{background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:8px;cursor:pointer;}
 .pagination button:hover{border-color:var(--gold);}
 .pagination button.active{background:var(--gold);color:var(--bg);font-weight:600;}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--bg);padding:10px 22px;border-radius:8px;font-weight:700;margin-top:10px;}
+.btn-primary:hover{opacity:.9;}
+code{background:#111;padding:2px 6px;border-radius:4px;font-size:13px;color:var(--gold);word-break:break-all;}
 @media(max-width:768px){.stats{grid-template-columns:1fr 1fr;}.hero h1{font-size:28px;}header{flex-direction:column;align-items:flex-start;}}
 @media(max-width:480px){.stats{grid-template-columns:1fr;}}
