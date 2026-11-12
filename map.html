@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><title>Map — Oil & Gas Ecology</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Map — Oil & Gas Ecology</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
-<style>#map{height:70vh;border-radius:12px;}</style>
 </head>
 <body>
 <header>
   <div class="logo">Oil & Gas Ecology Map</div>
-  <nav><a href="index.html">Home</a><a href="map.html">Map</a><a href="methodology.html">Methodology</a></nav>
+  <nav><a href="index.html">Home</a><a href="map.html" class="active">Map</a><a href="methodology.html">Methodology</a><a href="dashboard.html">Dashboard</a></nav>
 </header>
-<h1>Global Map</h1>
-<div id="map"></div>
+<main>
+  <h1>Global Map</h1>
+  <div class="legend">
+    <span><i class="dot red"></i> Gap</span><span><i class="dot green"></i> Verified</span><span><i class="dot gray"></i> Pending</span>
+  </div>
+  <div id="map"></div>
+</main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const map = L.map('map').setView([30, 20], 2);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'© OSM'}).addTo(map);
-
-// Примеры точек — реальные регионы с подтверждёнными проблемами
-const points = [
-  { lat: 4.8, lon: 7.0, type: 'red', title: 'Flaring — Niger Delta', url: 'object.html?id=flare-nigeria' },
-  { lat: 40.0, lon: 52.0, type: 'red', title: 'Methane Leak — Turkmenistan', url: 'object.html?id=methane-turkmenistan' },
-  { lat: 47.0, lon: 52.0, type: 'red', title: 'Well Blowout — Karaturun East, Kazakhstan', url: 'object.html?id=blowout-kazakhstan' },
-  { lat: 56.0, lon: -111.0, type: 'green', title: 'Reclamation — Alberta, Canada', url: 'object.html?id=reclamation-canada' },
-  { lat: 28.0, lon: 48.0, type: 'red', title: 'Oil Spill — Qaruh Island, Kuwait', url: 'object.html?id=spill-kuwait' }
-];
-
-points.forEach(p => {
-  L.circleMarker([p.lat, p.lon], {
-    radius: 8, color: p.type === 'red' ? '#FF4D4D' : '#4DFF88', fillOpacity: 0.7
-  }).addTo(map).bindPopup(`<b>${p.title}</b><br><a href="${p.url}">Details</a>`);
-});
-</script>
+<script src="app.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => setTimeout(renderMap, 500));</script>
 </body>
 </html>
