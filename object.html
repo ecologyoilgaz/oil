@@ -1,40 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Object — Oil & Gas Ecology</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header>
+  <div class="logo">Oil & Gas Ecology Map</div>
+  <nav>
+    <a href="index.html">Home</a><a href="map.html">Map</a>
+    <a href="methodology.html">Methodology</a><a href="dashboard.html">Dashboard</a>
+    <a href="treasury.html">Treasury</a><a href="signal.html">Signal</a>
+    <a href="response.html">Right of Reply</a>
+  </nav>
+</header>
+<main><article id="content"><p>Loading...</p></article></main>
+<footer>
+  <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
+    <a href="treasury.html">Treasury (Solana)</a> ·
+    <a href="methodology.html">Methodology</a>
+  </p>
+</footer>
 <script>
 const id = new URLSearchParams(location.search).get('id');
-fetch(`objects/${id}.json`)
-  .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
-  .then(o => {
-    const badge = o.status === 'red' ? '🔴 Gap Confirmed' : o.status === 'green' ? '🟢 Verified Result' : '⚫ Pending Verification';
-    
-    // Блок финансового ущерба
-    let financeHtml = '';
-    if (o.financial_impact) {
-      const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(o.financial_impact.loss_usd);
-      financeHtml = `
-        <div class="detail-block" style="border-left: 4px solid var(--red);">
-          <h3>Financial Impact</h3>
-          <p style="font-size: 24px; color: var(--red); font-weight: bold; margin: 5px 0;">${usd}</p>
-          <p>${o.financial_impact.description}</p>
-          <p style="font-size: 12px; color: var(--muted);"><em>Calculation: ${o.financial_impact.formula}</em></p>
-        </div>
-      `;
-    }
-
-    document.getElementById('content').innerHTML = `
-      <h1>${o.title}</h1>
-      <span class="status-badge ${o.status}">${badge}</span>
-      <p style="color:var(--muted);margin:10px 0;">${o.country} · ${o.region} · ${o.lat.toFixed(2)}, ${o.lon.toFixed(2)}</p>
-      
-      ${financeHtml}
-
-      <div class="detail-block"><h3>Claimed</h3><p>${o.claimed}</p></div>
-      <div class="detail-block"><h3>Actual (Verified)</h3><p>${o.actual}</p></div>
-      <div class="detail-block"><h3>Gap</h3><p>${o.gap}</p></div>
-      <div class="detail-block"><h3>Companies</h3><p>${(o.companies||[]).join(' · ')}</p></div>
-      <div class="detail-block"><h3>Sources</h3><ul>${(o.sources||[]).map(s => `<li>${s}</li>`).join('')}</ul></div>
-      <p><a href="index.html">← Back to list</a> · <a href="map.html">Map</a></p>
+fetch('objects.json').then(r => r.json()).then(data => {
+  const objects = data.objects || data;
+  const o = objects[id];
+  const el = document.getElementById('content');
+  
+  if (!o) { el.innerHTML = '<p>Object not found. <a href="index.html">Back</a></p>'; return; }
+  
+  const badge = o.status === 'red' ? '🔴 Gap Confirmed' : o.status === 'green' ? '🟢 Verified Result' : '⚫ Pending Verification';
+  
+  // Блок с деньгами
+  let financeHtml = '';
+  if (o.financial_impact) {
+    const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(o.financial_impact.loss_usd);
+    financeHtml = `
+      <div class="detail-block" style="border-left: 4px solid var(--red);">
+        <h3>Financial Impact</h3>
+        <p style="font-size: 24px; color: var(--red); font-weight: bold; margin: 5px 0;">${usd}</p>
+        <p>${o.financial_impact.description}</p>
+        <p style="font-size: 12px; color: var(--muted);"><em>Calculation: ${o.financial_impact.formula}</em></p>
+      </div>
     `;
-  })
-  .catch(() => {
-    document.getElementById('content').innerHTML = '<p>Object not found. <a href="index.html">Back</a></p>';
-  });
+  }
+
+  el.innerHTML = `
+    <h1>${o.title}</h1>
+    <span class="status-badge ${o.status}">${badge}</span>
+    <p style="color:var(--muted);margin:10px 0;">${o.country} · ${o.region} · ${o.lat.toFixed(2)}, ${o.lon.toFixed(2)}</p>
+    ${financeHtml}
+    <div class="detail-block"><h3>Claimed</h3><p>${o.claimed}</p></div>
+    <div class="detail-block"><h3>Actual (Verified)</h3><p>${o.actual}</p></div>
+    <div class="detail-block"><h3>Gap</h3><p>${o.gap}</p></div>
+    <div class="detail-block"><h3>Companies</h3><p>${(o.companies||[]).join(' · ')}</p></div>
+    <div class="detail-block"><h3>Sources</h3><ul>${(o.sources||[]).map(s => `<li>${s}</li>`).join('')}</ul></div>
+    <p><a href="index.html">← Back to list</a> · <a href="map.html">Map</a></p>
+  `;
+}).catch(() => {
+  document.getElementById('content').innerHTML = '<p>Error loading data. Check objects.json</p>';
+});
 </script>
+</body>
+</html>
