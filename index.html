@@ -2,84 +2,55 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Oil & Gas Ecology Map — Claimed vs Actual</title>
+<meta name="description" content="Open database of oil & gas gaps: flaring, methane leaks, spills, waste, fake reclamation. Verified via VIIRS, TROPOMI, Sentinel.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
   <div class="logo">Oil & Gas Ecology Map</div>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="map.html">Map</a>
     <a href="methodology.html">Methodology</a>
     <a href="signal.html">Submit Signal</a>
     <a href="response.html">Right of Reply</a>
+    <a href="dashboard.html">Dashboard</a>
   </nav>
 </header>
-
-<section class="hero">
-  <h1>Oil & Gas: <span class="red">Claimed</span> vs <span class="green">Actual</span></h1>
-  <p>Open database of flaring, methane leaks, spills, waste, and fake reclamation. Verified via satellite data (VIIRS, TROPOMI, Sentinel).</p>
-</section>
-
-<section class="stats">
-  <div class="stat"><span class="num">120</span><span class="label">Gaps Digitized</span></div>
-  <div class="stat"><span class="num">€2.3M</span><span class="label">Money in Gaps</span></div>
-  <div class="stat"><span class="num">45</span><span class="label">Confirmed Results</span></div>
-  <div class="stat"><span class="num">78%</span><span class="label">Data with Source</span></div>
-</section>
-
-<section>
-  <h2>Top Gaps (🔴)</h2>
-  <div class="grid">
-    <a href="object.html?id=flare-nigeria" class="card red">
-      <div class="card-title">Flaring — Nigeria</div>
-      <div class="card-meta">Claimed: 0 m³ | Actual: 4.2 bcm/yr | Gap: 100%</div>
-    </a>
-    <a href="object.html?id=methane-turkmenistan" class="card red">
-      <div class="card-title">Methane Leak — Turkmenistan</div>
-      <div class="card-meta">Claimed: 0 t | Actual: 131 kt | Gap: 100%</div>
-    </a>
-    <a href="object.html?id=spill-kazakhstan" class="card red">
-      <div class="card-title">Well Blowout — Kazakhstan</div>
-      <div class="card-meta">Claimed: contained | Actual: 205 days active | Gap: total</div>
-    </a>
+<main>
+  <section class="hero">
+    <h1>Oil & Gas: <span class="red">Claimed</span> vs <span class="green">Actual</span></h1>
+    <p>Open database of flaring, methane leaks, spills, waste, and fake reclamation. Verified via satellite data. No source — no publication.</p>
+  </section>
+  <section class="stats" id="stats"></section>
+  <div class="filters">
+    <select id="filter-status">
+      <option value="">All statuses</option>
+      <option value="red">🔴 Gap confirmed</option>
+      <option value="green">🟢 Verified</option>
+      <option value="gray">⚫ Pending</option>
+    </select>
+    <select id="filter-region">
+      <option value="">All regions</option>
+      <option>Africa</option><option>Asia</option><option>Europe</option>
+      <option>North America</option><option>South America</option>
+      <option>Oceania</option><option>Middle East</option>
+    </select>
+    <input id="filter-search" type="search" placeholder="Search country, company...">
   </div>
-</section>
-
-<section>
-  <h2>Confirmed Results (🟢)</h2>
-  <div class="grid">
-    <a href="object.html?id=reclamation-canada" class="card green">
-      <div class="card-title">Reclamation — Canada</div>
-      <div class="card-meta">Claimed: 500 ha | Verified: 480 ha (Sentinel-2)</div>
-    </a>
+  <div class="legend">
+    <span><i class="dot red"></i> 🔴 Gap confirmed</span>
+    <span><i class="dot green"></i> 🟢 Verified</span>
+    <span><i class="dot gray"></i> ⚫ Pending verification</span>
   </div>
-</section>
-
-<section>
-  <h2>Companies Tracked</h2>
-  <p>Data sources: EITI implementing countries [citation:4], company disclosures, satellite monitoring.</p>
-  <ul class="company-list">
-    <li><a href="https://www.slb.com" target="_blank">SLB</a> — oilfield services</li>
-    <li><a href="https://www.halliburton.com" target="_blank">Halliburton</a></li>
-    <li><a href="https://www.bakerhughes.com" target="_blank">Baker Hughes</a></li>
-    <li><a href="https://www.exxonmobil.com" target="_blank">ExxonMobil</a></li>
-    <li><a href="https://www.shell.com" target="_blank">Shell</a></li>
-    <li><a href="https://www.bp.com" target="_blank">BP</a></li>
-    <li><a href="https://www.chevron.com" target="_blank">Chevron</a></li>
-    <li><a href="https://totalenergies.com" target="_blank">TotalEnergies</a></li>
-    <li><a href="https://www.equinor.com" target="_blank">Equinor</a></li>
-    <li><a href="https://www.saudiramco.com" target="_blank">Saudi Aramco</a></li>
-  </ul>
-</section>
-
+  <section id="cards" class="grid"></section>
+  <div id="pagination" class="pagination"></div>
+</main>
 <footer>
-  <p>Contact: ecologyoilgaz@gmail.com</p>
-  <p>Data sources: <a href="https://eiti.org/countries" target="_blank">EITI</a> · <a href="https://www.copernicus.eu" target="_blank">Copernicus</a> · <a href="https://firms.modaps.eosdis.nasa.gov" target="_blank">NASA FIRMS (VIIRS)</a></p>
+  <p>Contact: ecologyoilgaz@gmail.com · Data: <a href="https://firms.modaps.eosdis.nasa.gov" target="_blank">NASA FIRMS</a> · <a href="https://www.copernicus.eu" target="_blank">Copernicus</a> · <a href="https://eiti.org/countries" target="_blank">EITI</a> · <a href="https://climatetrace.org" target="_blank">Climate TRACE</a></p>
 </footer>
-
+<script src="app.js"></script>
 </body>
 </html>
