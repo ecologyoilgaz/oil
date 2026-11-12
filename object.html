@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Object — Oil & Gas Ecology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Oil & Gas Ecology Map</div>
+  <nav><a href="index.html">Home</a><a href="map.html">Map</a></nav>
+</header>
+
+<article id="content">
+  <p>Loading...</p>
+</article>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+
+// Данные объектов (в реальности — загрузка из objects.json)
+const objects = {
+  'flare-nigeria': {
+    title: 'Gas Flaring — Niger Delta, Nigeria',
+    status: 'red',
+    claimed: '0 m³ flared (company reports)',
+    actual: '4.2 bcm/yr (VIIRS satellite)',
+    gap: '100% unreported',
+    money: '€0 to ground / €0 reported as environmental spend',
+    sources: [
+      { name: 'NASA FIRMS (VIIRS)', url: 'https://firms.modaps.eosdis.nasa.gov' },
+      { name: 'EITI Nigeria', url: 'https://eiti.org/countries' }
+    ],
+    companies: ['Shell', 'Chevron', 'TotalEnergies']
+  },
+  'methane-turkmenistan': {
+    title: 'Methane Leak — Turkmenistan',
+    status: 'red',
+    claimed: 'Not reported',
+    actual: '131 kt CH₄ over 205 days (TROPOMI + high-res)',
+    gap: '100%',
+    money: 'Not disclosed',
+    sources: [
+      { name: 'TROPOMI / Sentinel-5P', url: 'https://www.copernicus.eu' },
+      { name: 'Guanter et al., 2024 (ES&T Letters)', url: 'https://pubs.acs.org/doi/10.1021/acs.estlett.4c00373' }
+    ],
+    companies: ['Turkmennebit (state)']
+  },
+  'blowout-kazakhstan': {
+    title: 'Well Blowout — Karaturun East, Kazakhstan',
+    status: 'red',
+    claimed: 'Contained',
+    actual: 'Active 205 days; ~131 kt CH₄ released',
+    gap: 'Total underreporting',
+    money: 'Not disclosed',
+    sources: [
+      { name: 'Guanter et al., 2024', url: 'https://pubs.acs.org/doi/10.1021/acs.estlett.4c00373' }
+    ],
+    companies: ['KazMunayGas']
+  },
+  'reclamation-canada': {
+    title: 'Reclamation — Alberta, Canada',
+    status: 'green',
+    claimed: '500 ha reclaimed',
+    actual: '480 ha verified via Sentinel-2 NDVI',
+    gap: '4% difference (within tolerance)',
+    money: 'Audited',
+    sources: [
+      { name: 'Sentinel-2', url: 'https://www.copernicus.eu' },
+      { name: 'EITI Canada', url: 'https://eiti.org/countries' }
+    ],
+    companies: ['Suncor', 'CNRL']
+  },
+  'spill-kuwait': {
+    title: 'Oil Spill — Qaruh Island, Kuwait',
+    status: 'red',
+    claimed: 'Minor',
+    actual: 'Detected via Sentinel-1 SAR; extent mapped',
+    gap: 'Underreported',
+    money: 'Not disclosed',
+    sources: [
+      { name: 'Sentinel-1 SAR', url: 'https://www.copernicus.eu' },
+      { name: 'Study: Qaruh Island spill (2024)', url: 'https://www.sciencedirect.com/science/article/abs/pii/S2352485525002798' }
+    ],
+    companies: ['Kuwait Petroleum Corporation']
+  }
+};
+
+const obj = objects[id];
+const el = document.getElementById('content');
+
+if (!obj) {
+  el.innerHTML = '<p>Object not found. <a href="index.html">Back</a></p>';
+} else {
+  el.innerHTML = `
+    <h1 class="${obj.status}">${obj.title}</h1>
+    <div class="status-badge ${obj.status}">${obj.status === 'red' ? '🔴 Gap Confirmed' : '🟢 Verified Result'}</div>
+    
+    <div class="detail-block">
+      <h3>Claimed</h3><p>${obj.claimed}</p>
+      <h3>Actual (Verified)</h3><p>${obj.actual}</p>
+      <h3>Gap</h3><p>${obj.gap}</p>
+      <h3>Money</h3><p>${obj.money}</p>
+    </div>
+
+    <div class="detail-block">
+      <h3>Companies</h3>
+      <p>${obj.companies.join(' · ')}</p>
+    </div>
+
+    <div class="detail-block">
+      <h3>Sources</h3>
+      <ul>${obj.sources.map(s => `<li><a href="${s.url}" target="_blank">${s.name}</a></li>`).join('')}</ul>
+    </div>
+
+    <p><a href="map.html">← Back to map</a></p>
+  `;
+}
+</script>
+</body>
+</html>
