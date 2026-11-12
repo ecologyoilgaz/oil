@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dashboard — Oil & Gas Ecology</title>
+<title>Object — Oil & Gas Ecology</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,17 +12,14 @@
     <a href="index.html">Home</a>
     <a href="map.html">Map</a>
     <a href="methodology.html">Methodology</a>
-    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="dashboard.html">Dashboard</a>
     <a href="treasury.html">Treasury</a>
     <a href="signal.html">Signal</a>
     <a href="response.html">Right of Reply</a>
   </nav>
 </header>
 <main>
-  <h1>Digitization Dashboard</h1>
-  <section class="stats" id="stats"></section>
-  <h2>By Region</h2>
-  <table id="region-table"><thead><tr><th>Region</th><th>Total</th><th>🔴 Gaps</th><th>🟢 Verified</th><th>⚫ Pending</th></tr></thead><tbody></tbody></table>
+  <article id="content"><p>Loading...</p></article>
 </main>
 <footer>
   <p>Contact: ecologyoilgaz@gmail.com ·
@@ -31,22 +28,24 @@
   </p>
 </footer>
 <script>
-fetch('objects.json').then(r=>r.json()).then(data=>{
+const id = new URLSearchParams(location.search).get('id');
+fetch('objects.json').then(r => r.json()).then(data => {
   const objects = data.objects || data;
-  const arr = Object.values(objects);
-  const stats = document.getElementById('stats');
-  stats.innerHTML = `
-    <div class="stat"><span class="num">${arr.length}</span><span class="label">Total Objects</span></div>
-    <div class="stat"><span class="num" style="color:var(--red)">${arr.filter(o=>o.status==='red').length}</span><span class="label">Gaps</span></div>
-    <div class="stat"><span class="num" style="color:var(--green)">${arr.filter(o=>o.status==='green').length}</span><span class="label">Verified</span></div>
-    <div class="stat"><span class="num" style="color:var(--muted)">${arr.filter(o=>o.status==='gray').length}</span><span class="label">Pending</span></div>
+  const o = objects[id];
+  const el = document.getElementById('content');
+  if (!o) { el.innerHTML = '<p>Object not found. <a href="index.html">Back</a></p>'; return; }
+  const badge = o.status === 'red' ? '🔴 Gap Confirmed' : o.status === 'green' ? '🟢 Verified Result' : '⚫ Pending Verification';
+  el.innerHTML = `
+    <h1>${o.title}</h1>
+    <span class="status-badge ${o.status}">${badge}</span>
+    <p style="color:var(--muted);margin:10px 0;">${o.country} · ${o.region} · ${o.lat.toFixed(2)}, ${o.lon.toFixed(2)}</p>
+    <div class="detail-block"><h3>Claimed</h3><p>${o.claimed}</p></div>
+    <div class="detail-block"><h3>Actual (Verified)</h3><p>${o.actual}</p></div>
+    <div class="detail-block"><h3>Gap</h3><p>${o.gap}</p></div>
+    <div class="detail-block"><h3>Companies</h3><p>${(o.companies||[]).join(' · ')}</p></div>
+    <div class="detail-block"><h3>Sources</h3><ul>${(o.sources||[]).map(s => `<li>${s}</li>`).join('')}</ul></div>
+    <p><a href="index.html">← Back to list</a> · <a href="map.html">Map</a></p>
   `;
-  const regions = [...new Set(arr.map(o=>o.region))].sort();
-  const tbody = document.querySelector('#region-table tbody');
-  tbody.innerHTML = regions.map(r=>{
-    const items = arr.filter(o=>o.region===r);
-    return `<tr><td>${r}</td><td>${items.length}</td><td>${items.filter(o=>o.status==='red').length}</td><td>${items.filter(o=>o.status==='green').length}</td><td>${items.filter(o=>o.status==='gray').length}</td></tr>`;
-  }).join('');
 });
 </script>
 </body>
