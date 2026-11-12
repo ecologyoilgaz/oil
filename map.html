@@ -9,7 +9,15 @@
 <body>
 <header>
   <div class="logo">Oil & Gas Ecology Map</div>
-  <nav><a href="index.html">Home</a><a href="map.html" class="active">Map</a><a href="methodology.html">Methodology</a><a href="dashboard.html">Dashboard</a></nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="map.html" class="active">Map</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="treasury.html">Treasury</a>
+    <a href="signal.html">Signal</a>
+    <a href="response.html">Right of Reply</a>
+  </nav>
 </header>
 <main>
   <h1>Global Map</h1>
@@ -18,6 +26,12 @@
   </div>
   <div id="map"></div>
 </main>
+<footer>
+  <p>Contact: ecologyoilgaz@gmail.com ·
+    <a href="treasury.html">Treasury</a> ·
+    <a href="methodology.html">Methodology</a>
+  </p>
+</footer>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="app.js"></script>
 <script>document.addEventListener('DOMContentLoaded', () => setTimeout(renderMap, 500));</script>
