@@ -20,12 +20,9 @@ async function loadData() {
 function renderStats() {
   const el = document.getElementById('stats');
   if (!el) return;
-  
   const total = filtered.length;
   const red = filtered.filter(o => o.status === 'red').length;
   const green = filtered.filter(o => o.status === 'green').length;
-  
-  // Считаем общий ущерб в USD
   const totalLoss = filtered.reduce((sum, o) => sum + (o.financial_impact?.loss_usd || 0), 0);
   const totalLossFormatted = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalLoss);
 
@@ -42,15 +39,12 @@ function renderCards() {
   if (!el) return;
   const start = (currentPage - 1) * PER_PAGE;
   const pageItems = filtered.slice(start, start + PER_PAGE);
-  
   el.innerHTML = pageItems.map(o => {
-    // Форматируем цену для карточки
     let priceHtml = '';
     if (o.financial_impact?.loss_usd) {
       const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(o.financial_impact.loss_usd);
       priceHtml = `<div class="card-meta" style="color:var(--red); font-weight:bold; margin-top:6px;">Loss: ${usd}</div>`;
     }
-
     return `
       <a href="object.html?id=${o.id}" class="card ${o.status}">
         <div class="card-title">${o.title}</div>
@@ -81,25 +75,21 @@ function applyFilters() {
   const status = document.getElementById('filter-status')?.value || '';
   const region = document.getElementById('filter-region')?.value || '';
   const search = (document.getElementById('filter-search')?.value || '').toLowerCase();
-  
   filtered = Object.entries(OBJECTS).map(([id, o]) => ({ id, ...o })).filter(o => {
     if (status && o.status !== status) return false;
     if (region && o.region !== region) return false;
     if (search && !(`${o.title} ${o.country} ${(o.companies||[]).join(' ')}`).toLowerCase().includes(search)) return false;
     return true;
   });
-  
   currentPage = 1;
   renderStats();
   renderCards();
 }
 
-// Карта работает как раньше
 function renderMap() {
   if (typeof L === 'undefined' || !document.getElementById('map')) return;
   const map = L.map('map').setView([25, 15], 2);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'© OpenStreetMap'}).addTo(map);
-  
   Object.entries(OBJECTS).forEach(([id, o]) => {
     const color = o.status === 'red' ? '#FF4D4D' : o.status === 'green' ? '#4DFF88' : '#8A94C8';
     L.circleMarker([o.lat, o.lon], {radius: 7, color, fillOpacity: .7})
