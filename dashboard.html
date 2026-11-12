@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard — Oil & Gas Ecology</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Oil & Gas Ecology Map</div>
+  <nav><a href="index.html">Home</a><a href="map.html">Map</a><a href="dashboard.html" class="active">Dashboard</a></nav>
+</header>
+<main>
+  <h1>Digitization Dashboard</h1>
+  <section class="stats" id="stats"></section>
+  <h2>By Region</h2>
+  <table id="region-table"><thead><tr><th>Region</th><th>Total</th><th>🔴 Gaps</th><th>🟢 Verified</th><th>⚫ Pending</th></tr></thead><tbody></tbody></table>
+  <h2>By Status</h2>
+  <div id="status-bars"></div>
+</main>
+<script>
+fetch('objects.json').then(r=>r.json()).then(data=>{
+  const objects = data.objects || data;
+  const arr = Object.values(objects);
+  const stats = document.getElementById('stats');
+  stats.innerHTML = `
+    <div class="stat"><span class="num">${arr.length}</span><span class="label">Total Objects</span></div>
+    <div class="stat"><span class="num" style="color:var(--red)">${arr.filter(o=>o.status==='red').length}</span><span class="label">Gaps</span></div>
+    <div class="stat"><span class="num" style="color:var(--green)">${arr.filter(o=>o.status==='green').length}</span><span class="label">Verified</span></div>
+    <div class="stat"><span class="num" style="color:var(--muted)">${arr.filter(o=>o.status==='gray').length}</span><span class="label">Pending</span></div>
+  `;
+  const regions = [...new Set(arr.map(o=>o.region))].sort();
+  const tbody = document.querySelector('#region-table tbody');
+  tbody.innerHTML = regions.map(r=>{
+    const items = arr.filter(o=>o.region===r);
+    return `<tr><td>${r}</td><td>${items.length}</td><td>${items.filter(o=>o.status==='red').length}</td><td>${items.filter(o=>o.status==='green').length}</td><td>${items.filter(o=>o.status==='gray').length}</td></tr>`;
+  }).join('');
+});
+</script>
+</body>
+</html>
