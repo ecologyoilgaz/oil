@@ -8,15 +8,18 @@
   <nav>
     <a href="index.html">Home</a><a href="map.html">Map</a>
     <a href="methodology.html">Methodology</a><a href="dashboard.html">Dashboard</a>
-    <a href="treasury.html">Treasury</a><a href="signal.html">Signal</a>
-    <a href="response.html">Right of Reply</a>
+    <a href="tokens.html">Tokens & Pay</a><a href="treasury.html">Treasury</a>
+    <a href="signal.html">Signal</a><a href="response.html">Right of Reply</a>
   </nav>
 </header>
 <main><article id="content"><p>Loading...</p></article></main>
 <footer>
   <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
+    <a href="tokens.html">Tokens & Pay</a> ·
     <a href="treasury.html">Treasury (Solana)</a> ·
-    <a href="methodology.html">Methodology</a>
+    <a href="methodology.html">Methodology</a> ·
+    <a href="signal.html">Submit Signal</a> ·
+    <a href="response.html">Right of Reply</a>
   </p>
 </footer>
 <script>
@@ -25,12 +28,9 @@ fetch('objects.json').then(r => r.json()).then(data => {
   const objects = data.objects || data;
   const o = objects[id];
   const el = document.getElementById('content');
-  
   if (!o) { el.innerHTML = '<p>Object not found. <a href="index.html">Back</a></p>'; return; }
   
   const badge = o.status === 'red' ? '🔴 Gap Confirmed' : o.status === 'green' ? '🟢 Verified Result' : '⚫ Pending Verification';
-  
-  // Блок с деньгами
   let financeHtml = '';
   if (o.financial_impact) {
     const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(o.financial_impact.loss_usd);
