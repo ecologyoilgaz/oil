@@ -31,6 +31,7 @@ fetch('objects.json').then(r => r.json()).then(data => {
   if (!o) { el.innerHTML = '<p>Object not found. <a href="index.html">Back</a></p>'; return; }
   
   const badge = o.status === 'red' ? '🔴 Gap Confirmed' : o.status === 'green' ? '🟢 Verified Result' : '⚫ Pending Verification';
+  
   let financeHtml = '';
   if (o.financial_impact) {
     const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(o.financial_impact.loss_usd);
@@ -44,16 +45,32 @@ fetch('objects.json').then(r => r.json()).then(data => {
     `;
   }
 
+  let docsHtml = '';
+  if (o.documents && o.documents.length > 0) {
+    docsHtml = `
+      <div class="detail-block">
+        <h3>Source Documents (Download/View)</h3>
+        <ul>
+          ${o.documents.map(d => `<li><a href="${d.url}" target="_blank" rel="noopener">${d.name}</a></li>`).join('')}
+        </ul>
+      </div>
+    `;
+  }
+
   el.innerHTML = `
     <h1>${o.title}</h1>
     <span class="status-badge ${o.status}">${badge}</span>
     <p style="color:var(--muted);margin:10px 0;">${o.country} · ${o.region} · ${o.lat.toFixed(2)}, ${o.lon.toFixed(2)}</p>
+    
     ${financeHtml}
+    
     <div class="detail-block"><h3>Claimed</h3><p>${o.claimed}</p></div>
     <div class="detail-block"><h3>Actual (Verified)</h3><p>${o.actual}</p></div>
     <div class="detail-block"><h3>Gap</h3><p>${o.gap}</p></div>
     <div class="detail-block"><h3>Companies</h3><p>${(o.companies||[]).join(' · ')}</p></div>
-    <div class="detail-block"><h3>Sources</h3><ul>${(o.sources||[]).map(s => `<li>${s}</li>`).join('')}</ul></div>
+    
+    ${docsHtml}
+    
     <p><a href="index.html">← Back to list</a> · <a href="map.html">Map</a></p>
   `;
 }).catch(() => {
