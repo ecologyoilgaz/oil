@@ -1,70 +1,263 @@
 {
-  "meta": {"count": 5, "updated": "2026-11-12", "currency": "USD"},
+  "meta": {"count": 40, "updated": "2026-11-12", "currency": "USD"},
   "objects": {
+    "omsk-refinery": {
+      "title": "Omsk Refinery — Air Emissions", "country": "Russia", "region": "Asia", "lat": 54.97, "lon": 73.37, "status": "red",
+      "claimed": "SAKV system, 40% impact reduction", "actual": "Benzene 3.27x, H2S 2.5x, HCl 2.10x, NO2 1.17x above limits", "gap": "Systematic exceedances",
+      "financial_impact": {"loss_usd": 25000000, "description": "Health costs + potential fines", "formula": "Health damage base"},
+      "sources": ["Rosprirodnadzor", "Gazprom Neft reports"], "companies": ["Gazprom Neft"]
+    },
+    "ryazan-refinery": {
+      "title": "Ryazan Refinery — Unpermitted Emissions", "country": "Russia", "region": "Europe", "lat": 54.63, "lon": 39.74, "status": "red",
+      "claimed": "Standard operations", "actual": "Phenol emissions without permit; ammonia exceedances", "gap": "Unpermitted emissions confirmed",
+      "financial_impact": {"loss_usd": 15000000, "description": "Environmental fines and remediation", "formula": "Estimated regulatory fines"},
+      "sources": ["Rosprirodnadzor"], "companies": ["Rosneft"]
+    },
+    "peton-novoshakhtinsk": {
+      "title": "Peton Novoshakhtinsk Refinery — CO2", "country": "Russia", "region": "Europe", "lat": 47.83432, "lon": 39.85538, "status": "red",
+      "claimed": "Not disclosed", "actual": "550,426 t CO2e/yr (Climate TRACE)", "gap": "No independent verification",
+      "financial_impact": {"loss_usd": 46786210, "description": "Unpriced carbon emissions", "formula": "550,426 t × $85/t"},
+      "sources": ["Climate TRACE v6"], "companies": ["SRDI Oil & Gas Peton"]
+    },
+    "ktk-spill-2025": {
+      "title": "KTK Terminal Spill — Black Sea", "country": "Russia", "region": "Europe", "lat": 44.7, "lon": 37.8, "status": "red",
+      "claimed": "Contained", "actual": "42 km² (29 Aug) → >300 km² (1 Sep 2025)", "gap": "Rapid expansion, underreported",
+      "financial_impact": {"loss_usd": 450000000, "description": "Estimated 300 km² spill damage", "formula": "Volume × $200/bbl"},
+      "sources": ["IKI RAS", "Sentinel-1/2", "MODIS"], "companies": ["KTK Consortium"]
+    },
+    "el-palito-spill": {
+      "title": "El Palito Refinery Spill — Venezuela", "country": "Venezuela", "region": "South America", "lat": 10.48, "lon": -68.12, "status": "red",
+      "claimed": "Not disclosed", "actual": "Detected via Sentinel-1 SAR + Sentinel-2", "gap": "Unreported spill",
+      "financial_impact": {"loss_usd": 5000000, "description": "Unreported coastal contamination", "formula": "Estimated cleanup costs"},
+      "sources": ["INPE study", "Sentinel-1/2"], "companies": ["PDVSA"]
+    },
     "flare-nigeria": {
-      "title": "Gas Flaring — Niger Delta",
-      "country": "Nigeria", "region": "Africa", "lat": 4.8, "lon": 7.0, "status": "red",
-      "claimed": "Minimal flaring", 
-      "actual": "~4.2 bcm/yr flared (VIIRS)", 
-      "gap": "100% unreported",
-      "financial_impact": {
-        "loss_usd": 1260000000, 
-        "description": "4.2 bcm of gas wasted + carbon penalties",
-        "formula": "4.2 bcm × $300/m³ + CO₂ penalties"
-      },
+      "title": "Gas Flaring — Niger Delta", "country": "Nigeria", "region": "Africa", "lat": 4.8, "lon": 7.0, "status": "red",
+      "claimed": "Minimal flaring", "actual": "~4.2 bcm/yr (VIIRS)", "gap": "100% unreported",
+      "financial_impact": {"loss_usd": 1260000000, "description": "4.2 bcm of gas wasted + carbon penalties", "formula": "4.2 bcm × $300/m³"},
       "sources": ["NASA FIRMS VIIRS", "World Bank"], "companies": ["Shell", "Chevron", "TotalEnergies"]
     },
     "methane-turkmenistan": {
-      "title": "Methane Leak — Turkmenistan",
-      "country": "Turkmenistan", "region": "Asia", "lat": 40.0, "lon": 52.0, "status": "red",
-      "claimed": "Not reported", 
-      "actual": "131 kt CH4 / 205 days (TROPOMI)", 
-      "gap": "100%",
-      "financial_impact": {
-        "loss_usd": 6550000,
-        "description": "131,000 tonnes CH₄ released",
-        "formula": "131,000 t × $50/t (Social Cost of Methane)"
-      },
+      "title": "Methane Leak — Turkmenistan", "country": "Turkmenistan", "region": "Asia", "lat": 40.0, "lon": 52.0, "status": "red",
+      "claimed": "Not reported", "actual": "131 kt CH4 / 205 days (TROPOMI)", "gap": "100%",
+      "financial_impact": {"loss_usd": 6550000, "description": "131,000 tonnes CH₄ released", "formula": "131,000 t × $50/t"},
       "sources": ["TROPOMI", "Guanter et al. 2024"], "companies": ["Turkmennebit"]
     },
-    "ktk-spill-2025": {
-      "title": "KTK Terminal Spill — Black Sea",
-      "country": "Russia", "region": "Europe", "lat": 44.7, "lon": 37.8, "status": "red",
-      "claimed": "Contained", 
-      "actual": "42 km² (29 Aug) → >300 km² (1 Sep 2025)", 
-      "gap": "Rapid expansion, underreported",
-      "financial_impact": {
-        "loss_usd": 450000000,
-        "description": "Estimated 300 km² spill damage",
-        "formula": "Estimated volume × $200/bbl cleanup + ecosystem damage"
-      },
-      "sources": ["IKI RAS", "Sentinel-1/2"], "companies": ["KTK Consortium"]
-    },
-    "omsk-refinery": {
-      "title": "Omsk Refinery — Air Emissions",
-      "country": "Russia", "region": "Asia", "lat": 54.97, "lon": 73.37, "status": "red",
-      "claimed": "SAKV system, 40% impact reduction", 
-      "actual": "Benzene 3.27x, H2S 2.5x above limits", 
-      "gap": "Systematic exceedances",
-      "financial_impact": {
-        "loss_usd": 25000000,
-        "description": "Health costs + potential uncalculated fines",
-        "formula": "Estimated health damage for local population (Rosprirodnadzor base)"
-      },
-      "sources": ["Rosprirodnadzor"], "companies": ["Gazprom Neft"]
+    "blowout-kazakhstan": {
+      "title": "Well Blowout — Karaturun East", "country": "Kazakhstan", "region": "Asia", "lat": 47.0, "lon": 52.0, "status": "red",
+      "claimed": "Contained", "actual": "205 days active, ~131 kt CH4", "gap": "Total underreporting",
+      "financial_impact": {"loss_usd": 6550000, "description": "Uncontrolled methane release", "formula": "131,000 t × $50/t"},
+      "sources": ["Guanter et al. 2024"], "companies": ["KazMunayGas"]
     },
     "reclamation-canada": {
-      "title": "Reclamation — Alberta",
-      "country": "Canada", "region": "North America", "lat": 56.0, "lon": -111.0, "status": "green",
-      "claimed": "500 ha reclaimed", 
-      "actual": "480 ha verified (Sentinel-2 NDVI)", 
-      "gap": "4% (within tolerance)",
-      "financial_impact": {
-        "loss_usd": 300000,
-        "description": "20 ha not reclaimed (within tolerance)",
-        "formula": "20 ha × $15,000/ha"
-      },
-      "sources": ["Sentinel-2", "EITI Canada"], "companies": ["Suncor"]
+      "title": "Reclamation — Alberta", "country": "Canada", "region": "North America", "lat": 56.0, "lon": -111.0, "status": "green",
+      "claimed": "500 ha reclaimed", "actual": "480 ha verified (Sentinel-2 NDVI)", "gap": "4% (within tolerance)",
+      "financial_impact": {"loss_usd": 300000, "description": "20 ha not reclaimed", "formula": "20 ha × $15,000/ha"},
+      "sources": ["Sentinel-2", "EITI Canada"], "companies": ["Suncor", "CNRL"]
+    },
+    "spill-kuwait": {
+      "title": "Oil Spill — Qaruh Island", "country": "Kuwait", "region": "Middle East", "lat": 28.8, "lon": 48.8, "status": "red",
+      "claimed": "Minor", "actual": "Detected via Sentinel-1 SAR", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 10000000, "description": "Marine ecosystem damage", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1", "ScienceDirect 2024"], "companies": ["Kuwait Petroleum"]
+    },
+    "flare-iraq": {
+      "title": "Gas Flaring — Basra", "country": "Iraq", "region": "Middle East", "lat": 30.5, "lon": 47.8, "status": "red",
+      "claimed": "Reduction program", "actual": "17 bcm/yr flared (2nd globally)", "gap": "Program not delivering",
+      "financial_impact": {"loss_usd": 5100000000, "description": "Massive gas waste", "formula": "17 bcm × $300/m³"},
+      "sources": ["World Bank Flaring Tracker", "VIIRS"], "companies": ["Basrah Oil", "Shell"]
+    },
+    "flare-russia-yamal": {
+      "title": "Gas Flaring — Yamal", "country": "Russia", "region": "Asia", "lat": 66.0, "lon": 70.0, "status": "red",
+      "claimed": "95% utilization", "actual": "20+ bcm/yr flared (VIIRS)", "gap": "Utilization overstated",
+      "financial_impact": {"loss_usd": 6000000000, "description": "Gas waste at scale", "formula": "20 bcm × $300/m³"},
+      "sources": ["VIIRS", "World Bank"], "companies": ["Gazprom", "Novatek"]
+    },
+    "flare-venezuela": {
+      "title": "Gas Flaring — Lake Maracaibo", "country": "Venezuela", "region": "South America", "lat": 10.0, "lon": -71.5, "status": "red",
+      "claimed": "Not reported", "actual": "Persistent flaring (VIIRS)", "gap": "100%",
+      "financial_impact": {"loss_usd": 1500000000, "description": "Persistent unmonitored flaring", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["PDVSA"]
+    },
+    "flare-iran": {
+      "title": "Gas Flaring — Khuzestan", "country": "Iran", "region": "Middle East", "lat": 31.3, "lon": 48.7, "status": "red",
+      "claimed": "Flare gas recovery", "actual": "17+ bcm/yr flared", "gap": "Recovery delayed",
+      "financial_impact": {"loss_usd": 5100000000, "description": "Unrecovered gas resources", "formula": "17 bcm × $300/m³"},
+      "sources": ["VIIRS", "World Bank"], "companies": ["NIOC"]
+    },
+    "flare-libya": {
+      "title": "Gas Flaring — Sirte Basin", "country": "Libya", "region": "Africa", "lat": 30.0, "lon": 18.0, "status": "red",
+      "claimed": "Not reported", "actual": "Persistent flaring (VIIRS)", "gap": "100%",
+      "financial_impact": {"loss_usd": 800000000, "description": "Unmonitored flaring", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["NOC Libya"]
+    },
+    "methane-algeria": {
+      "title": "Methane Leaks — Hassi R'Mel", "country": "Algeria", "region": "Africa", "lat": 32.9, "lon": 3.3, "status": "red",
+      "claimed": "Low leak rate", "actual": "Super-emitter events (TROPOMI)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 10000000, "description": "Unreported methane losses", "formula": "Estimated volume × $50/t"},
+      "sources": ["TROPOMI"], "companies": ["Sonatrach"]
+    },
+    "methane-usa-permian": {
+      "title": "Methane Leaks — Permian Basin", "country": "USA", "region": "North America", "lat": 31.8, "lon": -102.4, "status": "red",
+      "claimed": "1.5% leak rate", "actual": "Super-emitters detected (TROPOMI)", "gap": "Leak rate understated",
+      "financial_impact": {"loss_usd": 25000000, "description": "Lost gas + penalties", "formula": "Estimated volume × $50/t"},
+      "sources": ["TROPOMI", "Carbon Mapper"], "companies": ["ExxonMobil", "Chevron", "ConocoPhillips"]
+    },
+    "spill-mexico-gulf": {
+      "title": "Oil Spill — Gulf of Mexico", "country": "Mexico/USA", "region": "North America", "lat": 25.0, "lon": -90.0, "status": "red",
+      "claimed": "Contained", "actual": "Recurring SAR detections", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 30000000, "description": "Recurring spills", "formula": "Estimated volume × $200/bbl"},
+      "sources": ["Sentinel-1"], "companies": ["Pemex", "BP"]
+    },
+    "spill-ogoni": {
+      "title": "Oil Spill — Ogoniland", "country": "Nigeria", "region": "Africa", "lat": 4.6, "lon": 7.5, "status": "red",
+      "claimed": "Cleanup ongoing", "actual": "Decades of contamination (UNEP)", "gap": "Cleanup incomplete",
+      "financial_impact": {"loss_usd": 1000000000, "description": "Long-term ecosystem destruction", "formula": "UNEP remediation estimate"},
+      "sources": ["UNEP 2011", "Sentinel-1"], "companies": ["Shell"]
+    },
+    "spill-peru": {
+      "title": "Oil Spill — Peruvian Amazon", "country": "Peru", "region": "South America", "lat": -3.0, "lon": -75.0, "status": "red",
+      "claimed": "Minor", "actual": "Recurring pipeline spills (SAR)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 5000000, "description": "Amazon pollution", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1", "OEFA"], "companies": ["Petroperu"]
+    },
+    "spill-russia-komi": {
+      "title": "Oil Spill — Komi Republic", "country": "Russia", "region": "Europe", "lat": 63.0, "lon": 55.0, "status": "red",
+      "claimed": "Contained", "actual": "Recurring spills (SAR)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 10000000, "description": "Arctic pollution", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1"], "companies": ["Lukoil"]
+    },
+    "waste-kazakhstan": {
+      "title": "Oil Waste — Mangystau", "country": "Kazakhstan", "region": "Asia", "lat": 44.0, "lon": 52.0, "status": "red",
+      "claimed": "Managed", "actual": "Unlined pits, sludge accumulation", "gap": "Unreported volume",
+      "financial_impact": {"loss_usd": 50000000, "description": "Soil and groundwater contamination", "formula": "Estimated remediation"},
+      "sources": ["EITI Kazakhstan", "Sentinel-2"], "companies": ["KazMunayGas"]
+    },
+    "waste-azerbaijan": {
+      "title": "Drilling Waste — Baku", "country": "Azerbaijan", "region": "Asia", "lat": 40.4, "lon": 49.9, "status": "red",
+      "claimed": "Managed", "actual": "Historical sludge lakes", "gap": "Unreported",
+      "financial_impact": {"loss_usd": 30000000, "description": "Legacy waste liabilities", "formula": "Estimated cleanup"},
+      "sources": ["EITI Azerbaijan"], "companies": ["SOCAR"]
+    },
+    "waste-uzbekistan": {
+      "title": "Oil Waste — Fergana", "country": "Uzbekistan", "region": "Asia", "lat": 40.4, "lon": 71.8, "status": "red",
+      "claimed": "Managed", "actual": "Legacy sludge sites", "gap": "Unreported",
+      "financial_impact": {"loss_usd": 20000000, "description": "Unreported legacy waste", "formula": "Estimated cleanup"},
+      "sources": ["EITI Uzbekistan"], "companies": ["Uzbekneftegaz"]
+    },
+    "reclamation-saudi": {
+      "title": "Reclamation — Saudi Arabia", "country": "Saudi Arabia", "region": "Middle East", "lat": 26.0, "lon": 50.0, "status": "green",
+      "claimed": "Reclamation program", "actual": "Verified via Sentinel-2 NDVI", "gap": "Within tolerance",
+      "financial_impact": {"loss_usd": 0, "description": "No significant loss", "formula": "N/A"},
+      "sources": ["Sentinel-2"], "companies": ["Saudi Aramco"]
+    },
+    "reclamation-norway": {
+      "title": "Reclamation — North Sea", "country": "Norway", "region": "Europe", "lat": 60.0, "lon": 2.0, "status": "green",
+      "claimed": "Decommissioning", "actual": "Verified via SAR + reports", "gap": "Within tolerance",
+      "financial_impact": {"loss_usd": 0, "description": "No significant loss", "formula": "N/A"},
+      "sources": ["Sentinel-1", "EITI Norway"], "companies": ["Equinor"]
+    },
+    "flare-angola": {
+      "title": "Gas Flaring — Angola", "country": "Angola", "region": "Africa", "lat": -8.8, "lon": 13.2, "status": "red",
+      "claimed": "Flare reduction", "actual": "Persistent (VIIRS)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 600000000, "description": "Unmonitored flaring", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["Sonangol"]
+    },
+    "flare-indonesia": {
+      "title": "Gas Flaring — East Kalimantan", "country": "Indonesia", "region": "Asia", "lat": 0.5, "lon": 117.0, "status": "red",
+      "claimed": "Reduction program", "actual": "Persistent (VIIRS)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 400000000, "description": "Unmonitored flaring", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["Pertamina"]
+    },
+    "spill-thailand": {
+      "title": "Oil Spill — Rayong", "country": "Thailand", "region": "Asia", "lat": 12.7, "lon": 101.3, "status": "red",
+      "claimed": "Contained", "actual": "SAR detections", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 15000000, "description": "Coastal pollution", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1"], "companies": ["PTTEP"]
+    },
+    "flare-mexico-ku": {
+      "title": "Gas Flaring — Ku-Maloob-Zaap", "country": "Mexico", "region": "North America", "lat": 19.5, "lon": -92.0, "status": "red",
+      "claimed": "Reduction", "actual": "Persistent (VIIRS)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 900000000, "description": "Unmonitored flaring", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["Pemex"]
+    },
+    "methane-australia": {
+      "title": "Methane Leaks — Queensland", "country": "Australia", "region": "Oceania", "lat": -23.0, "lon": 148.0, "status": "red",
+      "claimed": "Low emissions", "actual": "Super-emitters (TROPOMI)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 12000000, "description": "Lost gas", "formula": "Estimated volume × $50/t"},
+      "sources": ["TROPOMI"], "companies": ["Santos", "Origin"]
+    },
+    "spill-colombia": {
+      "title": "Oil Spill — Putumayo", "country": "Colombia", "region": "South America", "lat": 0.5, "lon": -76.0, "status": "red",
+      "claimed": "Contained", "actual": "Recurring (SAR)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 8000000, "description": "Amazon pollution", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1"], "companies": ["Ecopetrol"]
+    },
+    "flare-egypt": {
+      "title": "Gas Flaring — Western Desert", "country": "Egypt", "region": "Africa", "lat": 28.0, "lon": 28.0, "status": "red",
+      "claimed": "Reduction", "actual": "Persistent (VIIRS)", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 300000000, "description": "Unmonitored flaring", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["EGPC"]
+    },
+    "reclamation-germany": {
+      "title": "Reclamation — Ruhr", "country": "Germany", "region": "Europe", "lat": 51.5, "lon": 7.0, "status": "green",
+      "claimed": "Post-mining reclamation", "actual": "Verified (Sentinel-2)", "gap": "Within tolerance",
+      "financial_impact": {"loss_usd": 0, "description": "No significant loss", "formula": "N/A"},
+      "sources": ["Sentinel-2"], "companies": ["RAG"]
+    },
+    "spill-saudi-ras": {
+      "title": "Oil Spill — Ras Tanura", "country": "Saudi Arabia", "region": "Middle East", "lat": 26.6, "lon": 50.2, "status": "red",
+      "claimed": "Contained", "actual": "SAR detections", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 20000000, "description": "Marine pollution", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1"], "companies": ["Saudi Aramco"]
+    },
+    "flare-usa-texas": {
+      "title": "Gas Flaring — Permian, Texas", "country": "USA", "region": "North America", "lat": 31.5, "lon": -103.0, "status": "red",
+      "claimed": "Reduction targets", "actual": "Persistent (VIIRS)", "gap": "Targets missed",
+      "financial_impact": {"loss_usd": 800000000, "description": "Wasted gas", "formula": "Estimated volume"},
+      "sources": ["VIIRS"], "companies": ["ExxonMobil", "Diamondback"]
+    },
+    "spill-canada-nl": {
+      "title": "Oil Spill — Newfoundland", "country": "Canada", "region": "North America", "lat": 47.5, "lon": -52.0, "status": "red",
+      "claimed": "Minor", "actual": "SAR detections", "gap": "Underreported",
+      "financial_impact": {"loss_usd": 5000000, "description": "Offshore pollution", "formula": "Estimated cleanup"},
+      "sources": ["Sentinel-1"], "companies": ["Cenovus"]
+    },
+    "flare-qatar": {
+      "title": "Gas Flaring — Ras Laffan", "country": "Qatar", "region": "Middle East", "lat": 25.9, "lon": 51.5, "status": "gray",
+      "claimed": "Low flaring", "actual": "Awaiting VIIRS verification", "gap": "Pending",
+      "financial_impact": {"loss_usd": 0, "description": "Pending verification", "formula": "N/A"},
+      "sources": ["VIIRS (pending)"], "companies": ["QatarEnergy"]
+    },
+    "methane-norway": {
+      "title": "Methane — Norwegian Shelf", "country": "Norway", "region": "Europe", "lat": 60.5, "lon": 3.0, "status": "gray",
+      "claimed": "Low emissions", "actual": "Awaiting TROPOMI verification", "gap": "Pending",
+      "financial_impact": {"loss_usd": 0, "description": "Pending verification", "formula": "N/A"},
+      "sources": ["TROPOMI (pending)"], "companies": ["Equinor"]
+    },
+    "germany-methane-duh": {
+      "title": "Methane Leaks — Germany (DUH/Earthworks)", "country": "Germany", "region": "Europe", "lat": 52.5, "lon": 13.4, "status": "red",
+      "claimed": "EU Methane Regulation compliance", "actual": "Leaks at 13 of 44 facilities; all LNG terminals surveyed had emissions", "gap": "Regulatory loopholes; self-regulation failed",
+      "financial_impact": {"loss_usd": 15000000, "description": "Unreported infrastructure leaks", "formula": "Estimated volume × $50/t"},
+      "sources": ["DUH & Earthworks 2026"], "companies": ["Various operators"]
+    },
+    "colorado-chevron-blowout": {
+      "title": "Chevron Bishop Well Blowout — Colorado", "country": "USA", "region": "North America", "lat": 40.4, "lon": -104.7, "status": "red",
+      "claimed": "Controlled operations", "actual": "Methane 20 ppm (limit 9); benzene 10x; 5 days uncontrolled", "gap": "Underreported severity",
+      "financial_impact": {"loss_usd": 50000000, "description": "Health impact and emergency response", "formula": "Health damage + response costs"},
+      "sources": ["Earthworks / CSU 2025"], "companies": ["Chevron"]
+    },
+    "bohai-methane": {
+      "title": "Methane Emissions — Bohai Sea", "country": "China", "region": "Asia", "lat": 38.5, "lon": 119.5, "status": "red",
+      "claimed": "Standard operations", "actual": "CH4 saturation up to 1193%; spills increase local flux 14.6x", "gap": "Underreported in national inventories",
+      "financial_impact": {"loss_usd": 100000000, "description": "Marine ecosystem damage", "formula": "Estimated volume × $50/t + cleanup"},
+      "sources": ["Zhang et al. 2014, Marine Pollution Bulletin"], "companies": ["CNOOC (implied)"]
+    },
+    "agadem-cnpc-blowout": {
+      "title": "Agadem Blowout — Niger (CNPC)", "country": "Niger", "region": "Africa", "lat": 16.9, "lon": 9.9, "status": "red",
+      "claimed": "Not disclosed for 17 days", "actual": ">40 t CH4/hr; >17,000 t cumulative by Oct 13", "gap": "Disclosure delay; oil volume undisclosed",
+      "financial_impact": {"loss_usd": 850000, "description": "Methane loss", "formula": "17,000 t × $50/t"},
+      "sources": ["Copernicus / SRON / Ecofin 2026"], "companies": ["CNPC"]
     }
   }
 }
