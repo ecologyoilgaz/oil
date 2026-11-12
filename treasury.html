@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treasury — Oil & Gas Ecology Map</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Oil & Gas Ecology Map</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="treasury.html" class="active">Treasury</a>
+    <a href="signal.html">Signal</a>
+    <a href="response.html">Right of Reply</a>
+  </nav>
+</header>
+<main>
+
+<h1>Treasury & Transaction Route</h1>
+<p style="color:var(--muted);max-width:800px;">
+  We do not collect money "for ecology". We accept contributions to cover verification costs
+  (satellite data, legal review, hosting). Every contribution has a public on-chain route:
+  from sender → treasury → project → report (photo + GPS). No route — no contribution.
+</p>
+
+<h2>Public Wallets (view-only)</h2>
+<div class="detail-block">
+  <h3>Solana (SOL / USDT-SPL)</h3>
+  <p><strong>Address:</strong> <code>4ovcwwTKYuCynQacrt8omamhjfkWo29A6iJBDYAbpSiB</code></p>
+  <p><a href="https://solscan.io/account/4ovcwwTKYuCynQacrt8omamhjfkWo29A6iJBDYAbpSiB" target="_blank">View on Solscan →</a></p>
+  <p style="color:var(--muted);font-size:13px;">Type: contribution receipt. Do not send without a project ID in the memo.</p>
+</div>
+<div class="detail-block">
+  <h3>Tron (TRC-20 / USDT)</h3>
+  <p><strong>Address:</strong> <code>GRj75Ux6we8j9W2fa7kTiUtdNvFFXv7RqGDybJy2HoSs</code></p>
+  <p><a href="https://tronscan.org/#/address/GRj75Ux6we8j9W2fa7kTiUtdNvFFXv7RqGDybJy2HoSs" target="_blank">View on Tronscan →</a></p>
+  <p style="color:var(--muted);font-size:13px;">Type: contribution receipt. Do not send without a project ID in the memo.</p>
+</div>
+
+<h2>Transaction Route (how it works)</h2>
+<table>
+  <thead><tr><th>Step</th><th>What happens</th><th>What you see</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>You send a contribution with a project ID in the memo</td><td>Your tx hash</td></tr>
+    <tr><td>2</td><td>Funds arrive at the public treasury wallet</td><td>On-chain balance</td></tr>
+    <tr><td>3</td><td>Treasury is a multisig (2-of-3 independent signers)</td><td>Multisig address + signers list</td></tr>
+    <tr><td>4</td><td>Funds are sent to the project wallet</td><td>Second tx hash</td></tr>
+    <tr><td>5</td><td>Project submits report (photo + GPS + date)</td><td>Report page</td></tr>
+    <tr><td>6</td><td>We verify and publish</td><td>Status 🟢 / 🔴</td></tr>
+  </tbody>
+</table>
+
+<h2>Rules</h2>
+<ul>
+  <li><strong>No project ID — no acceptance.</strong> We return or ignore contributions without a destination.</li>
+  <li><strong>Multisig only.</strong> No single key can move treasury funds.</li>
+  <li><strong>Public audit.</strong> Every outgoing tx is published with a link to the project report.</li>
+  <li><strong>No investment.</strong> Contributions are not securities, not tokens, not investments.</li>
+  <li><strong>Right to refuse.</strong> We do not accept contributions from sanctioned entities or for projects without verified reports.</li>
+</ul>
+
+<h2>Our Own Finances</h2>
+<table>
+  <thead><tr><th>Category</th><th>Share</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Verification (satellite, legal)</td><td>70%</td><td>Core cost</td></tr>
+    <tr><td>Infrastructure (hosting, tools)</td><td>20%</td><td>Public receipts</td></tr>
+    <tr><td>Administration</td><td>10%</td><td>Capped, published</td></tr>
+  </tbody>
+</table>
+
+<p style="margin-top:30px;color:var(--muted);font-size:13px;">
+  <strong>Security note:</strong> these addresses are view-only for public audit.
+  Do not send funds without a project ID. Treasury is multisig; single-key transfers are disabled.
+</p>
+
+</main>
+<footer>
+  <p>Contact: ecologyoilgaz@gmail.com · <a href="treasury.html">Treasury</a> · <a href="methodology.html">Methodology</a></p>
+</footer>
+</body>
+</html>
