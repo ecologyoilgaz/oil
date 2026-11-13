@@ -12,6 +12,7 @@
     <a href="map.html">Map</a>
     <a href="solutions.html">Solutions</a>
     <a href="rwa.html" class="active">RWA & Liquidity</a>
+    <a href="eco-token.html">ECO Token</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="tokens.html">Tokens & Pay</a>
     <a href="treasury.html">Treasury</a>
@@ -22,74 +23,65 @@
 <main>
   <h1>Real World Assets (RWA) & Liquidity</h1>
   <p style="color:var(--muted);max-width:800px;">
-    Identifying a gap is not enough. We tokenize the <strong>solutions</strong> to attract liquidity. 
-    When you fund a solution, you receive an RWA token acting as a digital receipt and proof of impact.
+    We use a dual-token system: the universal <a href="eco-token.html">€ECO Token</a> for general impact funding, and specific project tokens for direct funding. 
+    Below is the allocation of raised funds and the current status of active RWA projects.
   </p>
 
-  <h2>How It Works (Step-by-Step)</h2>
-  <div class="detail-block">
-    <ol>
-      <li><strong>Select a Gap & Solution:</strong> E.g., Gas Flaring in Nigeria. Solution: Flare gas capture ($10M cost).</li>
-      <li><strong>Tokenization:</strong> We issue "Flare Capture Receipt" tokens on Solana. 1 Token = $100 of verified project funding.</li>
-      <li><strong>Funding:</strong> Donors/Investors buy these tokens via our Treasury.</li>
-      <li><strong>Execution:</strong> Funds go to the project. The project installs the capture unit.</li>
-      <li><strong>Verification:</strong> Satellite data (VIIRS) confirms the flare is reduced.</li>
-      <li><strong>Impact:</strong> The token status updates to 🟢 "Verified Impact" in your wallet.</li>
-    </ol>
-  </div>
-
-  <h2>Active RWA Projects (Ready for Funding)</h2>
+  <h2>Active RWA Projects</h2>
   <table>
     <thead>
       <tr>
-        <th>Project</th>
+        <th>Project ID</th>
         <th>Solution</th>
-        <th>Target</th>
-        <th>Token Status</th>
-        <th>Action</th>
+        <th>Target Cost</th>
+        <th>Funded via €ECO</th>
+        <th>Funded via Project Token</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Gas Flaring — Niger Delta</td>
+        <td><code>flare-nigeria</code></td>
         <td>Small-scale Flare Capture</td>
         <td>$10,000,000</td>
-        <td><span style="color:var(--gold)">🟡 Raising Funds</span></td>
-        <td><a href="tokens.html" class="btn-primary">Fund via Treasury</a></td>
+        <td>450,000 €ECO ($4.5M)</td>
+        <td>50,000 €20 ($500K)</td>
+        <td><span style="color:var(--gold)">🟡 50% Funded</span></td>
       </tr>
       <tr>
-        <td>Used Oil — Nigeria</td>
+        <td><code>nigeria-used-oil</code></td>
         <td>Build Re-refining Plant</td>
         <td>$30,000,000</td>
-        <td><span style="color:var(--gold)">🟡 Raising Funds</span></td>
-        <td><a href="tokens.html" class="btn-primary">Fund via Treasury</a></td>
+        <td>100,000 €ECO ($1M)</td>
+        <td>0</td>
+        <td><span style="color:var(--gold)">🟡 3% Funded</span></td>
       </tr>
       <tr>
-        <td>Methane Leaks — Turkmenistan</td>
+        <td><code>methane-turkmenistan</code></td>
         <td>Plug Abandoned Wells</td>
         <td>$1,000,000</td>
+        <td>100,000 €ECO ($1M)</td>
+        <td>0</td>
         <td><span style="color:var(--green)">🟢 Fully Funded</span></td>
-        <td><a href="object.html?id=methane-turkmenistan">View Proof</a></td>
       </tr>
     </tbody>
   </table>
 
-  <h2>Why RWA Tokens? (The Economics)</h2>
+  <h2>How to Fund a Solution</h2>
   <div class="detail-block">
-    <ul>
-      <li><strong>Transparency:</strong> Every dollar is tracked on-chain via Solscan.</li>
-      <li><strong>Liquidity:</strong> Donors can see their impact token, which acts as a verifiable ESG certificate.</li>
-      <li><strong>Accountability:</strong> Funds are released via Multisig only when milestones are met.</li>
-    </ul>
+    <ol>
+      <li>Go to the <a href="tokens.html">Tokens & Pay page</a>.</li>
+      <li>Choose your token (€ECO or a specific one like €20).</li>
+      <li>Send it to our Treasury wallet.</li>
+      <li>In the Memo, write the Project ID (e.g., <code>MEMO: flare-nigeria</code>).</li>
+    </ol>
   </div>
 </main>
 <footer>
   <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
+    <a href="eco-token.html">ECO Token</a> ·
     <a href="tokens.html">Tokens & Pay</a> ·
-    <a href="treasury.html">Treasury (Solana)</a> ·
-    <a href="methodology.html">Methodology</a> ·
-    <a href="signal.html">Submit Signal</a> ·
-    <a href="response.html">Right of Reply</a>
+    <a href="methodology.html">Methodology</a>
   </p>
 </footer>
 </body>
