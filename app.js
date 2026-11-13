@@ -29,7 +29,7 @@ function renderStats() {
   el.innerHTML = `
     <div class="stat"><span class="num">${total}</span><span class="label">Objects</span></div>
     <div class="stat"><span class="num" style="color:var(--red)">${red}</span><span class="label">Gaps (🔴)</span></div>
-    <div class="stat"><span class="num" style="color:var(--red); font-size: 22px;">${totalLossFormatted}</span><span class="label">Estimated Loss (USD)</span></div>
+    <div class="stat loss-icon"><span class="num" style="color:var(--red); font-size: 22px;">${totalLossFormatted}</span><span class="label">Estimated Loss (USD)</span></div>
     <div class="stat"><span class="num" style="color:var(--green)">${green}</span><span class="label">Verified (🟢)</span></div>
   `;
 }
@@ -92,7 +92,7 @@ function renderMap() {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'© OpenStreetMap'}).addTo(map);
   Object.entries(OBJECTS).forEach(([id, o]) => {
     const color = o.status === 'red' ? '#FF4D4D' : o.status === 'green' ? '#4DFF88' : '#8A94C8';
-    L.circleMarker([o.lat, o.lon], {radius: 7, color, fillOpacity: .7})
+    L.circleMarker([o.lat, o.lon], {radius: 7, color, fillOpacity: .8})
       .addTo(map)
       .bindPopup(`<b>${o.title}</b><br>${o.country}<br><a href="object.html?id=${id}">Details</a>`);
   });
