@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RWA & Liquidity — Oil & Gas Ecology Map</title><link rel="stylesheet" href="style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tokens & Contributions — Oil & Gas Ecology Map</title><link rel="stylesheet" href="style.css"></head>
 <body>
 <header>
   <div class="logo">Oil & Gas Ecology Map</div>
@@ -11,93 +9,80 @@
     <a href="index.html">Home</a>
     <a href="map.html">Map</a>
     <a href="solutions.html">Solutions</a>
-    <a href="rwa.html" class="active">RWA & Liquidity</a>
+    <a href="rwa.html">RWA & Liquidity</a>
     <a href="eco-token.html">ECO Token</a>
     <a href="dashboard.html">Dashboard</a>
-    <a href="tokens.html">Tokens & Pay</a>
+    <a href="tokens.html" class="active">Tokens & Pay</a>
     <a href="treasury.html">Treasury</a>
     <a href="signal.html">Signal</a>
     <a href="response.html">Right of Reply</a>
   </nav>
 </header>
 <main>
-  <h1>Real World Assets (RWA) & Liquidity</h1>
-  <p style="color:var(--muted);max-width:800px;">
-    We use a multi-token system: the universal <a href="eco-token.html">€ECO Token</a> for general impact funding, <strong>€GREEN</strong> for ecosystem restoration, and specific project tokens for direct funding. 
-    Below is the allocation of raised funds and the current status of active RWA projects.
-  </p>
+<h1>Tokens & Contributions</h1>
+<p style="color:var(--muted);max-width:800px;">
+  We do not sell speculative investments. We issue <strong>RWA Impact Tokens</strong> that act as digital receipts for funding specific environmental solutions. You can choose to fund specific projects using their dedicated tokens, or use the universal €ECO token.
+</p>
 
-  <div style="text-align:center; margin:20px 0;">
-    <img src="rwa-graphic.png" alt="RWA Balance" style="max-width:400px; border-radius:12px; border:1px solid var(--border);">
-  </div>
+<h2>1. Universal Tokens (Fund any project)</h2>
+<table>
+  <thead><tr><th>Token</th><th>Contract Address</th><th>Use Case</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>€ECO</strong></td>
+      <td><code>74Zc9ntjagHLYscczhfk5eWfUjcye8vqBWXWaGpLSnFp</code></td>
+      <td>Universal receipt for any project</td>
+    </tr>
+    <tr>
+      <td><strong>€GREEN</strong></td>
+      <td><code>2prcusSFrxNQ85yR44UegSGcfuTYHy17cTGWnuqD1Hke</code></td>
+      <td>Dedicated to reclamation & ecosystem restoration</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h2>Active RWA Projects</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Project ID</th>
-        <th>Solution</th>
-        <th>Target Cost</th>
-        <th>Funded via €ECO</th>
-        <th>Funded via €GREEN</th>
-        <th>Funded via Project Token</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>flare-nigeria</code></td>
-        <td>Small-scale Flare Capture</td>
-        <td>$10,000,000</td>
-        <td>450,000 €ECO ($4.5M)</td>
-        <td>0</td>
-        <td>50,000 €20 ($500K)</td>
-        <td><span style="color:var(--gold)">🟡 50% Funded</span></td>
-      </tr>
-      <tr>
-        <td><code>nigeria-used-oil</code></td>
-        <td>Build Re-refining Plant</td>
-        <td>$30,000,000</td>
-        <td>100,000 €ECO ($1M)</td>
-        <td>10,000 €GREEN ($100K)</td>
-        <td>0</td>
-        <td><span style="color:var(--gold)">🟡 3% Funded</span></td>
-      </tr>
-      <tr>
-        <td><code>methane-turkmenistan</code></td>
-        <td>Plug Abandoned Wells</td>
-        <td>$1,000,000</td>
-        <td>100,000 €ECO ($1M)</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span style="color:var(--green)">🟢 Fully Funded</span></td>
-      </tr>
-      <tr>
-        <td><code>reclamation-canada</code></td>
-        <td>Reclaim 20 ha of land</td>
-        <td>$300,000</td>
-        <td>0</td>
-        <td>30,000 €GREEN ($300K)</td>
-        <td>0</td>
-        <td><span style="color:var(--green)">🟢 Fully Funded</span></td>
-      </tr>
-    </tbody>
-  </table>
+<h2>2. Project-Specific Tokens (Fund specific solutions)</h2>
+<table>
+  <thead><tr><th>Token</th><th>Contract Address</th><th>Use Case</th></tr></thead>
+  <tbody>
+    <tr><td><strong>€20 (EUR RWA)</strong></td><td><code>EVr3k6rruveLtQiLadvNiKhK8e4WecnLHZxhcJwRDuTg</code></td><td>Standard contribution</td></tr>
+    <tr><td><strong>$ONE</strong></td><td><code>CGn6yYGTUkctq9PqDdK6ALgfxTS1vTBr9NWBPuoNYmad</code></td><td>General support</td></tr>
+    <tr><td><strong>USDT (SPL)</strong></td><td><em>Standard Solana USDT</em></td><td>Stable value funding</td></tr>
+  </tbody>
+</table>
 
-  <h2>How to Fund a Solution</h2>
-  <div class="detail-block">
-    <ol>
-      <li>Go to the <a href="tokens.html">Tokens & Pay page</a>.</li>
-      <li>Choose your token (€ECO, €GREEN, or a specific one like €20).</li>
-      <li>Send it to our Treasury wallet.</li>
-      <li>In the Memo, write the Project ID (e.g., <code>MEMO: flare-nigeria</code>).</li>
-    </ol>
-  </div>
+<h2>How to Fund a Solution</h2>
+<div class="detail-block">
+  <h3>1. Choose a Project</h3>
+  <p>Go to the <a href="rwa.html">RWA & Liquidity page</a> and pick a project that needs funding (e.g., Flare Capture in Nigeria).</p>
+  
+  <h3>2. Send Tokens to Treasury</h3>
+  <p>Send your chosen tokens to our official Treasury wallets:</p>
+  <ul>
+    <li><strong>Wallet 1:</strong> <code>4ovcwwTKYuCynQacrt8omamhjfkWo29A6iJBDYAbpSiB</code></li>
+    <li><strong>Wallet 2:</strong> <code>GRj75Ux6we8j9W2fa7kTiUtdNvFFXv7RqGDybJy2HoSs</code></li>
+  </ul>
+
+  <h3>3. Add a Memo (Mandatory)</h3>
+  <p>You <strong>must</strong> include a memo with the Project ID and your Solana wallet address to receive the RWA receipt token.</p>
+  <p>Example Memo: <code>ID: flare-nigeria | MY_WALLET: YourSolanaAddressHere</code></p>
+
+  <h3>4. Receive Your RWA Token</h3>
+  <p>Once funds are received by the multisig, we mint your RWA receipt token (either a specific token, €ECO, or €GREEN). You can track the project's progress and the token's status (🟡 Funding → 🟢 Verified) in your Phantom or Solflare wallet.</p>
+</div>
+
+<h2>Important Rules</h2>
+<ul>
+  <li><strong>Not an investment:</strong> RWA tokens are proof of donation/impact, not equity or profit-sharing.</li>
+  <li><strong>No Memo = No Token:</strong> Without a project ID and your wallet address, we cannot issue your receipt.</li>
+  <li><strong>Multisig Security:</strong> Funds are held in a 2-of-3 multisig wallet. No single person can move them.</li>
+</ul>
 </main>
 <footer>
   <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
     <a href="eco-token.html">ECO Token</a> ·
     <a href="tokens.html">Tokens & Pay</a> ·
+    <a href="treasury.html">Treasury (Solana)</a> ·
     <a href="methodology.html">Methodology</a>
   </p>
 </footer>
