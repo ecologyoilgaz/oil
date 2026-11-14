@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preliminary Environmental Report — Waste Oil Burning (Uzbekistan)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .report-hero {
+    text-align: center; padding: 60px 20px; margin-bottom: 40px; border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(5,5,16,0.95) 100%);
+    border: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  }
+  .report-hero h1 { font-size: 38px; margin-bottom: 20px; line-height: 1.3; }
+  .report-hero .subtitle { font-size: 18px; color: var(--muted); margin-bottom: 25px; }
+  
+  .meta-box {
+    display: inline-block; text-align: left; background: rgba(0,0,0,0.4);
+    padding: 20px 30px; border-radius: 12px; border: 1px solid var(--border);
+    font-size: 14px; color: var(--text); line-height: 1.8;
+  }
+  .meta-box strong { color: var(--gold); }
+
+  .report-content {
+    max-width: 900px; margin: 0 auto; background: var(--card);
+    backdrop-filter: blur(12px); border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+  .report-content h2 {
+    font-size: 24px; color: var(--gold); margin: 40px 0 20px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .report-content h3 { font-size: 18px; color: var(--text); margin: 25px 0 10px; }
+  .report-content p, .report-content li { margin-bottom: 12px; color: #C0C8F0; }
+  .report-content ul, .report-content ol { margin-left: 20px; margin-bottom: 20px; }
+  
+  .report-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  .report-table th { background: rgba(255,215,0,0.1); color: var(--gold); padding: 12px; text-align: left; border: 1px solid var(--border); }
+  .report-table td { padding: 12px; border: 1px solid var(--border); }
+  .report-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+  
+  .alert-box {
+    background: rgba(255,77,77,0.1); border-left: 4px solid var(--red);
+    padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+  }
+  .alert-box strong { color: var(--red); }
+
+  .highlight-box {
+    background: rgba(77,255,136,0.05); border-left: 4px solid var(--green);
+    padding: 20px; border-radius: 8px; margin: 25px 0;
+  }
+  .highlight-box strong { color: var(--green); }
+
+  .news-block { margin: 20px 0; }
+  .news-item { background: rgba(0,0,0,0.3); border-left: 3px solid var(--gold); padding: 15px 20px; margin-bottom: 15px; border-radius: 0 8px 8px 0; }
+  .news-item h4 { margin: 0 0 8px 0; color: var(--text); font-size: 16px; }
+  .news-item p { margin: 0; font-size: 14px; color: var(--muted); }
+  .news-item a { font-size: 13px; }
+
+  .signature {
+    margin-top: 50px; padding-top: 20px; border-top: 1px dashed var(--border);
+    font-style: italic; color: var(--muted); text-align: right;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="water-logo.png" alt="Water Logo"> Water Ecology Map</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="rwa.html">RWA & Liquidity</a>
+    <a href="eco-token.html">ECO Token</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tokens.html">Tokens & Pay</a>
+    <a href="treasury.html">Treasury</a>
+    <a href="signal.html">Signal</a>
+    <a href="response.html">Right of Reply</a>
+  </nav>
+</header>
+
+<main>
+  <section class="report-hero">
+    <h1>Preliminary Environmental Report</h1>
+    <div class="subtitle">"Burning of Waste Oils in Boilers and Greenhouses: Emission and Environmental Damage Assessment for Uzbekistan"</div>
+    
+    <div class="meta-box">
+      <strong>Classification:</strong> For Internal Official Use<br>
+      <strong>Prepared by:</strong> "EcoAudit-Central Asia" Expert Group (independent, unofficial)<br>
+      <strong>Date:</strong> November 14, 2026<br>
+      <strong>Status:</strong> Preliminary (calculated, no field measurements)
+    </div>
+  </section>
+
+  <article class="report-content">
+    
+    <h2>1. Basis and Purpose</h2>
+    <p>This report was prepared by an expert group based on:</p>
+    <ul>
+      <li>open data from raids by the Special Environmental Commission (December 2025);</li>
+      <li>estimates of waste oil generation in Uzbekistan (~250,000 t/year);</li>
+      <li>international reference emission factors (EPA, IPCC, Japanese methodology for waste oil);</li>
+      <li>international damage cost estimates (market CO₂ price, SCC, EPA rates for PM/NOx/SO₂).</li>
+    </ul>
+    <p><strong>Purpose:</strong> to provide an order-of-magnitude damage estimate where official calculations are absent, and to propose short-term solutions.</p>
+
+    <h2>2. Initial Balance Hypothesis (Working Assumption)</h2>
+    <table class="report-table">
+      <thead><tr><th>Stream</th><th>Share</th><th>Mass, t/year</th></tr></thead>
+      <tbody>
+        <tr><td>Burning (boilers, greenhouses, illegal)</td><td>50%</td><td>125,000</td></tr>
+        <tr><td>Discharge to soil/water/sewer</td><td>30%</td><td>75,000</td></tr>
+        <tr><td>Unaccounted collection (unknown location)</td><td>20%</td><td>50,000</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>100%</strong></td><td><strong>250,000</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box">
+      <strong>Caveat:</strong> This is an estimated hypothesis, not confirmed by official collection statistics.
+    </div>
+
+    <h2>3. Emission Calculation from Burning 125,000 t of Oil</h2>
+    <table class="report-table">
+      <thead><tr><th>Pollutant</th><th>Emission Factor</th><th>Emissions, t/year</th></tr></thead>
+      <tbody>
+        <tr><td>CO₂</td><td>2.9 t/t oil</td><td>362,500</td></tr>
+        <tr><td>PM (particulate matter)</td><td>~8.55 kg/t</td><td>~1,069</td></tr>
+        <tr><td>PM-10</td><td>~7.56 kg/t</td><td>~945</td></tr>
+        <tr><td>NOx</td><td>~2.11 kg/t</td><td>~264</td></tr>
+        <tr><td>SO₂ (at S=1%)</td><td>~0.143 kg/t</td><td>~18</td></tr>
+        <tr><td>CO</td><td>~0.278 kg/t</td><td>~35</td></tr>
+        <tr><td>Lead (at 0.1% Pb)</td><td>~0.0067 kg/t</td><td>~0.84</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Damage Assessment (International Rates)</h2>
+    <h3>4.1. Burning</h3>
+    <table class="report-table">
+      <thead><tr><th>Component</th><th>Lower Estimate</th><th>Upper Estimate</th></tr></thead>
+      <tbody>
+        <tr><td>CO₂ (market $21/t → SCC $1,013/t)</td><td>~$7.6M</td><td>~$367M</td></tr>
+        <tr><td>PM/PM-10 (EPA $150,000–840,000/t)</td><td>~$142M</td><td>~$794M</td></tr>
+        <tr><td>NOx (EPA $5,800–20,000/t)</td><td>~$1.5M</td><td>~$5.3M</td></tr>
+        <tr><td><strong>Total Burning</strong></td><td><strong>~$151M</strong></td><td><strong>~$1.17B</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>4.2. Discharge of 75,000 t to Soil/Water</h3>
+    <p>There are no direct international "tariffs." The lower bound based on soil treatment cost (~$1/t) is <strong>~$75,000</strong>, but this does not account for groundwater migration or health impacts. A realistic range cannot be determined without monitoring data.</p>
+
+    <h3>4.3. Unaccounted 50,000 t</h3>
+    <p>Not assessed. Conservatively, this could be attributed to burning or discharge, increasing the total by 20–40%.</p>
+
+    <h2>5. Summary Conclusion on Damage</h2>
+    <table class="report-table">
+      <thead><tr><th>Scenario</th><th>Damage Estimate (Burning)</th></tr></thead>
+      <tbody>
+        <tr><td>Lower bound</td><td>~$150M</td></tr>
+        <tr><td>Upper bound</td><td>~$1.2B</td></tr>
+        <tr><td>Discharge to soil/water</td><td>Not determined (no data)</td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box">
+      Even the lower bound demonstrates a scale of damage that is orders of magnitude higher than the cost of installing filters and organizing collection.
+    </div>
+
+    <h2>6. Short-Term Solutions</h2>
+    <h3>6.1. Conversion to Biodiesel with Pre-Treatment</h3>
+    <p>Waste oil, after pre-treatment (filtration, removal of water and mechanical impurities, neutralization), can be processed into biodiesel. This:</p>
+    <ul>
+      <li>reduces burning and discharge volumes;</li>
+      <li>creates a local energy carrier;</li>
+      <li>does not require imported catalysts for simple schemes.</li>
+    </ul>
+
+    <h3>6.2. Mini-Plant Deployment Scheme</h3>
+    <table class="report-table">
+      <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Regions</td><td>12</td></tr>
+        <tr><td>Plants per region</td><td>6</td></tr>
+        <tr><td>Total plants</td><td>72</td></tr>
+        <tr><td>Capacity per plant</td><td>1 t/day</td></tr>
+        <tr><td>Total capacity</td><td>72 t/day</td></tr>
+        <tr><td>Annual processing volume (350 days)</td><td>~25,200 t/year</td></tr>
+      </tbody>
+    </table>
+
+    <h3>6.3. Environmental Effect</h3>
+    <p>Processing ~25,000 t/year of waste oil instead of burning/discharging:</p>
+    <ul>
+      <li>reduces PM/PM-10, NOx, SO₂, and CO₂ emissions from burning;</li>
+      <li>prevents ~25,000 t of oil from entering soil and water;</li>
+      <li>reduces pressure on groundwater in areas of mass burning (Kibray, Zangiota, Bektemir).</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Note:</strong> 25,000 t is about 10% of total oil generation (250,000 t) and about 20% of the burning stream (125,000 t). The effect is real but does not fully close the problem.
+    </div>
+
+    <h2>7. Brief Calculation for All of Uzbekistan</h2>
+    <h3>7.1. Initial Data (Same Hypothesis)</h3>
+    <p>The calculation fully coincides with Section 3, since 125,000 t is already the national estimate of the burning stream.</p>
+
+    <h3>7.2. Emissions and Damage from Burning (National Scale)</h3>
+    <table class="report-table">
+      <thead><tr><th>Component</th><th>Emissions, t/year</th><th>Damage (Lower)</th><th>Damage (Upper)</th></tr></thead>
+      <tbody>
+        <tr><td>CO₂</td><td>~362,500</td><td>~$7.6M</td><td>~$367M</td></tr>
+        <tr><td>PM/PM-10</td><td>~1,069 / ~945</td><td>~$142M</td><td>~$794M</td></tr>
+        <tr><td>NOx</td><td>~264</td><td>~$1.5M</td><td>~$5.3M</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td><strong>~$151M</strong></td><td><strong>~$1.17B</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.3. Discharge of 75,000 t</h3>
+    <p>Without groundwater monitoring data, this cannot be determined. The lower bound based on soil treatment cost (~$1/t) gives only <strong>~$75,000</strong>, which is clearly underestimated.</p>
+
+    <h3>7.4. Comparison with the Mini-Plant Solution</h3>
+    <p>The scheme of 72 plants × 1 t/day = ~25,200 t/year processes:</p>
+    <ul>
+      <li>~20% of the burning stream (125,000 t);</li>
+      <li>~34% of the discharge stream (75,000 t);</li>
+      <li>~10% of total generation (250,000 t).</li>
+    </ul>
+    <p>To cover at least half of the burning stream, ~170 plants would be required, and even more with discharge included.</p>
+
+    <h3>7.5. National Conclusion (Brief)</h3>
+    <p>The theoretical damage from burning at the national scale is from ~$150M to ~$1.2B. Discharge to soil/water is not assessed due to lack of data. The 72 mini-plant scheme covers no more than 10% of total oil generation. Real reduction of damage requires expanding the collection network, field emission measurements, and phased scaling of processing.</p>
+
+    <h2>8. Recommendations for Companies (Short-Term, 0–12 Months)</h2>
+    <ol>
+      <li><strong>Greenhouse farms and boiler houses:</strong> install particulate/gas filters on existing boilers; stop burning waste oil, tires, bitumen, and fuel oil; conclude contracts for waste oil removal with licensed collectors.</li>
+      <li><strong>Collectors and processors:</strong> organize oil collection points in each district; implement pre-treatment of oil before biodiesel conversion; launch pilot mini-plants (1 t/day) in 2–3 districts to refine the scheme.</li>
+      <li><strong>Service and transport companies:</strong> hand over waste oil only under contract, with transfer acts; maintain records of oil generation and transfer.</li>
+      <li><strong>Investors and mini-plant operators:</strong> replicate modular plants according to the 12 regions × 6 plants scheme; ensure pre-treatment of feedstock for stable biodiesel yield.</li>
+    </ol>
+
+    <h2>9. Limitations and Caveats</h2>
+    <ol>
+      <li>This calculation is not official and cannot be used for legal claims.</li>
+      <li>Emission factors are taken from international reference books, not from measurements on Uzbek boilers.</li>
+      <li>The 50/30/20 balance hypothesis is an estimate.</li>
+      <li>Damage from discharge to groundwater is not calculated due to lack of monitoring data.</li>
+      <li>The 72 plants × 1 t/day scheme is illustrative; actual productivity depends on collection logistics and feedstock quality.</li>
+      <li>Exchange rate for conversion to UZS: 1 USD = 12,014.37 UZS (Central Bank of Uzbekistan, 14.11.2026).</li>
+    </ol>
+
+    <h2>10. Next Steps (Internal)</h2>
+    <ol>
+      <li>Request actual collection volumes from Uz-Prista Recycling for 2020–2025 to verify the balance.</li>
+      <li>Initiate field measurements of emissions from greenhouse boilers (PM, NOx, SO₂, Pb).</li>
+      <li>Conduct soil and groundwater sampling in areas of mass burning.</li>
+      <li>Launch a pilot mini-plant (1 t/day) and measure actual biodiesel yield after pre-treatment.</li>
+      <li>After obtaining data, recalculate the report using national methodologies.</li>
+    </ol>
+
+    <h2>11. Official Inspections & Media Coverage (Context)</h2>
+    <p style="margin-bottom: 20px;">The following official inspections and media reports illustrate the regulatory context and enforcement actions related to environmental violations in Uzbekistan (2026).</p>
+    
+    <div class="news-block">
+      <div class="news-item">
+        <h4>October 2026 — National Committee on Ecology and Climate Change: Disciplinary Actions</h4>
+        <p>An expanded meeting chaired by Aziz Abdukhakimov criticized deficiencies in environmental control. Heads of the Andijan, Namangan, and Khorezm regional ecology departments were dismissed. Issues included inadequate monitoring equipment integration and failure to act on citizen complaints.</p>
+        <a href="https://hukumat.uz/ru/eco/news/view/230579" target="_blank">Source: Hukumat.uz (RU) →</a>
+      </div>
+
+      <div class="news-item">
+        <h4>October 2026 — Illegal Wastewater Discharge in Tashkent Region</h4>
+        <p>Environmental Police raids in Yukorichirchiq District found enterprises (B.S.I., M.K., P.U., Sh.R.B., S.S.P.) discharging untreated industrial wastewater onto open land. Suspended solids exceeded standards several times. Materials were forwarded to law enforcement.</p>
+        <a href="https://hukumat.uz/en/eco/news/view/240432" target="_blank">Source: Hukumat.uz (EN) →</a>
+      </div>
+
+      <div class="news-item">
+        <h4>October 2026 — Chirchiq River Pollution (Red Water Incident)</h4>
+        <p>Following social media reports of red water in the Chirchiq River, inspections at the Chirchiq treatment plant (Toshkent viloyati suv ta'minoti JSC) revealed treatment efficiency of only 27.7%. Untreated wastewater from Gazalkent was discharged directly into the river. Compensation claims were calculated and materials sent to law enforcement.</p>
+        <a href="https://hukumat.uz/ru/eco/news/view/233063" target="_blank">Source: Hukumat.uz (RU) →</a>
+      </div>
+
+      <div class="news-item">
+        <h4>July 2026 — Salar Canal Sewage Discharge</h4>
+        <p>A damaged sewer pipeline during construction by B.B. LLC led to 63,936 m³ of liquid waste being pumped into the Salar Canal. Laboratory tests showed petroleum products 5.02x the limit, ammonium nitrogen 43.5x, and COD 4.9x. Total environmental compensation: UZS 2.22 billion.</p>
+        <a href="https://gov.uz/en/eco/news/view/199249" target="_blank">Source: Gov.uz (EN) →</a>
+      </div>
+
+      <div class="news-item">
+        <h4>March 2026 — New Eco-Police Leadership Appointed</h4>
+        <p>Fazliddin Salomov was appointed Deputy Chairman of the National Committee on Ecology and Climate Change and Deputy Head of the State Environmental Control Inspectorate (Eco-Police), reinforcing institutional capacity for environmental enforcement.</p>
+        <a href="https://kun.uz/news/2026/03/18/fazliddin-salomov-ekopolitsiya-boshligining-orinbosari-lavozimiga-tayinlandi" target="_blank">Source: Kun.uz (UZ) →</a>
+      </div>
+    </div>
+
+    <div class="signature">
+      <p><strong>Signed:</strong> "EcoAudit-Central Asia" Group</p>
+      <p>"We count what others don't"</p>
+      <p style="font-size: 12px; margin-top: 10px;">This report is analytical and calculative in nature. All figures are estimates, except where reference coefficients are explicitly stated.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
+    <a href="eco-token.html">ECO Token</a> ·
+    <a href="tokens.html">Tokens & Pay</a> ·
+    <a href="treasury.html">Treasury (Solana)</a> ·
+    <a href="methodology.html">Methodology</a>
+  </p>
+</footer>
+</body>
+</html>
