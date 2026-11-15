@@ -59,67 +59,145 @@
 <main>
   <section class="rep-hero">
     <h1>Waste Oils — Kazakhstan</h1>
-    <p class="subtitle">Assessment of Generation, Collection, and Damage. Preliminary Environmental Report.</p>
+    <p class="subtitle">Generation, Pollution Load, Damage Assessment and Short-Term Solutions. Preliminary Environmental Report.</p>
     <div class="meta-grid">
       <div class="meta-item"><strong>Prepared by</strong>EcoAudit-Central Asia</div>
       <div class="meta-item"><strong>Date</strong>15 November 2026</div>
-      <div class="meta-item"><strong>Status</strong>Preliminary</div>
+      <div class="meta-item"><strong>Status</strong>Preliminary (calculated)</div>
     </div>
     <div><span class="confidential-stamp">For Internal Official Use Only</span></div>
   </section>
 
   <article class="report-body">
-    <h2>1. Generation Volume</h2>
-    <p>The total flow of waste oils in Kazakhstan is estimated at <strong>120,000–180,000 tonnes per year</strong> (EEESEF analytical report, 2026). Of this:</p>
+    <h2>1. Basis and Objective</h2>
+    <p>This report has been prepared on the basis of:</p>
+    <ul>
+      <li>open analytical data on waste oil generation in Kazakhstan (EEESEF, 2026);</li>
+      <li>documented criminal cases of illegal processing and burning;</li>
+      <li>international reference emission coefficients (EPA, IPCC, Japanese methodology for waste oil);</li>
+      <li>international damage valuations (market CO₂ price, SCC, EPA rates for PM/NOx/SO₂).</li>
+    </ul>
+    <p><strong>Objective:</strong> to provide an order of magnitude of pollution load and damage where official calculations are absent, and to propose short-term solutions.</p>
+
+    <h2>2. Generation Volume</h2>
+    <p>The total flow of waste oils in Kazakhstan is estimated at <strong>120,000–170,000 tonnes per year</strong> (EEESEF analytical report, 2026). Of this:</p>
     <ul>
       <li>60,000–80,000 t — from automotive and commercial transport;</li>
       <li>60,000–90,000 t — from industry and mining (Tengiz, Kashagan, Karachaganak, Karaganda coal basin, Balkhash copper smelter).</li>
     </ul>
-    <div class="alert-box"><strong>Caveat:</strong> This is an analytical estimate based on lubricant consumption (~200,000 t/year), not official statistics.</div>
+    <div class="alert-box"><strong>Caveat:</strong> This is an analytical estimate based on lubricant consumption, not official statistics.</div>
 
-    <h2>2. Collection Rate and Infrastructure Gap</h2>
-    <p>The official collection rate for waste oils in Kazakhstan is estimated at only <strong>20–30%</strong> — the bottom quartile of global practice (Germany and France — 78–82%, USA — about 60%, China — about 80%).</p>
-    <div class="kpi-grid">
-      <div class="kpi-card"><span class="kpi-val">20–30%</span><span class="kpi-lbl">Official Collection</span></div>
-      <div class="kpi-card"><span class="kpi-val">70–80%</span><span class="kpi-lbl">Unaccounted</span></div>
-      <div class="kpi-card"><span class="kpi-val">84k–144k t</span><span class="kpi-lbl">Burned or Dumped</span></div>
-    </div>
-    <p><strong>Key figure:</strong> If only 20–30% is collected, then 70–80% of oil (≈ 84,000–144,000 t/year) goes to burning, dumping or unaccounted circulation.</p>
+    <h2>3. Working Balance Hypothesis</h2>
+    <table class="report-table">
+      <thead><tr><th>Flow</th><th>Share</th><th>Mass, t/year</th></tr></thead>
+      <tbody>
+        <tr><td>Burning (boilers, illegal)</td><td>50%</td><td>60,000–85,000</td></tr>
+        <tr><td>Dumping into soil/water</td><td>30%</td><td>84,000–136,000 (70–80% of uncollected)</td></tr>
+        <tr><td>Unaccounted collection</td><td>20%</td><td>remainder</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>100%</strong></td><td><strong>120,000–170,000</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box"><strong>Caveat:</strong> The hypothesis is an estimate, not confirmed by official collection statistics.</div>
 
-    <h2>3. Burning and Illegal Processing</h2>
-    <p>Unlike Uzbekistan, Kazakhstan has documented criminal cases:</p>
-    <ul>
-      <li><strong>Aktobe, 2026:</strong> the head of IE "Kazenergy" was sentenced to 3 years 9 months for illegal processing of hazardous waste. Waste oils and oil sludge mixed with naphtha were used as feedstock. More than 11 million litres of furnace fuel were produced and sold, with criminal proceeds of 778 million tenge. The investigation noted that the fuel did not meet standards and could release toxic substances when burned in boilers.</li>
-    </ul>
-    <div class="highlight-box"><strong>Confirmation:</strong> The flow "waste oil → illegal fuel → burning in boilers" is real and has criminal evidence.</div>
+    <h2>4. Air Emissions from Burning</h2>
+    <p>Based on 60,000–85,000 t/year burned:</p>
+    <table class="report-table">
+      <thead><tr><th>Pollutant</th><th>Specific coefficient</th><th>Emissions, t/year</th></tr></thead>
+      <tbody>
+        <tr><td>CO₂</td><td>2.9 t/t</td><td>174,000–246,500</td></tr>
+        <tr><td>PM (particulate matter)</td><td>~8.55 kg/t</td><td>~513–727</td></tr>
+        <tr><td>PM-10</td><td>~7.56 kg/t</td><td>~454–643</td></tr>
+        <tr><td>NOx</td><td>~2.11 kg/t</td><td>~127–179</td></tr>
+        <tr><td>SO₂ (at S=1%)</td><td>~0.143 kg/t</td><td>~8.6–12.2</td></tr>
+        <tr><td>CO</td><td>~0.278 kg/t</td><td>~16.7–23.6</td></tr>
+        <tr><td>Lead (at 0.1% Pb)</td><td>~0.0067 kg/t</td><td>~0.40–0.57</td></tr>
+      </tbody>
+    </table>
 
-    <h2>4. Damage Assessment (Calculated)</h2>
-    <p>If we assume that 50% of 120,000–180,000 t/year is burned (60,000–90,000 t), then using international coefficients:</p>
+    <h2>5. Soil Load</h2>
+    <p>Dumping of 84,000–136,000 t/year of oil. At an average density of 0.9 t/m³, this is <strong>~93,000–151,000 m³</strong> of liquid hydrocarbons entering soil and ground. One litre of waste oil can contaminate thousands of cubic metres of water — the potential volume of water contamination is orders of magnitude larger than the dump volume itself.</p>
+
+    <h2>6. Damage Assessment (International Rates)</h2>
     <table class="report-table">
       <thead><tr><th>Component</th><th>Lower estimate</th><th>Upper estimate</th></tr></thead>
       <tbody>
-        <tr><td>CO₂ (60–90k t × 2.9 t/t × $21–1013/t)</td><td>~$3.7–5.5 mln</td><td>~$176–264 mln</td></tr>
-        <tr><td>PM/PM-10 (per EPA)</td><td>~$68–102 mln</td><td>~$381–571 mln</td></tr>
-        <tr><td>NOx</td><td>~$0.7–1.1 mln</td><td>~$2.5–3.8 mln</td></tr>
-        <tr><td><strong>Total burning</strong></td><td><strong>~$72–109 mln</strong></td><td><strong>~$560–839 mln</strong></td></tr>
+        <tr><td>CO₂ (market $21/t → SCC $1,013/t)</td><td>~$3.7–5.2 mln</td><td>~$176–250 mln</td></tr>
+        <tr><td>PM/PM-10 (EPA $150,000–840,000/t)</td><td>~$68–97 mln</td><td>~$381–543 mln</td></tr>
+        <tr><td>NOx (EPA $5,800–20,000/t)</td><td>~$0.7–1.0 mln</td><td>~$2.5–3.6 mln</td></tr>
+        <tr><td><strong>Total burning</strong></td><td><strong>~$72–103 mln</strong></td><td><strong>~$560–797 mln</strong></td></tr>
       </tbody>
     </table>
-    <p>Dumping of 70–80% of uncollected oil (84,000–144,000 t): without groundwater monitoring data, cannot be determined.</p>
+    <p>Dumping (84,000–136,000 t): cannot be determined without groundwater monitoring data. The lower bound based on soil treatment cost (~$1/t) gives only ~$84,000–136,000, which is clearly underestimated and does not account for migration into aquifers.</p>
 
-    <h2>5. Short-Term Solutions</h2>
+    <h2>7. Documented Cases of Illegal Circulation</h2>
+    <div class="highlight-box">
+      <strong>Aktobe, 2026:</strong> The head of IE "Kazenergy" was sentenced to 3 years 9 months for illegal processing of hazardous waste. Waste oils, oil sludge and other oil-containing waste mixed with naphtha were used. More than 11 million litres of furnace fuel were produced and sold, with criminal proceeds of 778 million tenge. The investigation noted that the fuel did not meet standards and could release toxic substances when burned in boilers and furnaces.
+    </div>
+
+    <h2>8. Infrastructure Gap</h2>
+    <p>Kazakhstan does not have specialised regeneration capacities (Group I or Group II). This means that even collected oil cannot be processed into base oil within the country. The collection rate is estimated at <strong>20–30%</strong> — the bottom quartile of global practice (Germany and France — 78–82%, China — about 80%).</p>
+    <div class="kpi-grid">
+      <div class="kpi-card"><span class="kpi-val">20–30%</span><span class="kpi-lbl">Collection Rate</span></div>
+      <div class="kpi-card"><span class="kpi-val">70–80%</span><span class="kpi-lbl">Unaccounted</span></div>
+      <div class="kpi-card"><span class="kpi-val">0</span><span class="kpi-lbl">Regeneration Capacity</span></div>
+    </div>
+
+    <h2>9. Short-Term Solutions</h2>
+    <h3>9.1. Biodiesel production with pre-treatment</h3>
+    <p>Waste oil, after pre-treatment (filtration, removal of water and mechanical impurities, neutralisation), can be processed into biodiesel. This:</p>
+    <ul>
+      <li>reduces the volume of burning and dumping;</li>
+      <li>creates a local energy carrier;</li>
+      <li>does not require imported catalysts in simple schemes.</li>
+    </ul>
+
+    <h3>9.2. Mini-plant deployment scheme</h3>
+    <p>It is proposed to replicate modular units with a capacity of 1 tonne per day:</p>
+    <table class="report-table">
+      <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Regions</td><td>17 (as an example, by administrative units)</td></tr>
+        <tr><td>Units per region</td><td>6</td></tr>
+        <tr><td>Total units</td><td>102</td></tr>
+        <tr><td>Capacity of one unit</td><td>1 t/day</td></tr>
+        <tr><td>Total capacity</td><td>102 t/day</td></tr>
+        <tr><td>Annual processing volume (350 days)</td><td>~35,700 t/year</td></tr>
+      </tbody>
+    </table>
+
+    <h3>9.3. Environmental effect</h3>
+    <p>Processing ~35,000 t/year of waste oil instead of burning/dumping:</p>
+    <ul>
+      <li>reduces PM/PM-10, NOx, SO₂ and CO₂ emissions from burning;</li>
+      <li>prevents ~35,000 t of oil from entering soil and water;</li>
+      <li>reduces the load on groundwater in areas of mass burning (Aktobe, Karaganda, Atyrau).</li>
+    </ul>
+    <div class="alert-box"><strong>Note:</strong> 35,000 t is about 20–30% of total generation (120,000–170,000 t) and about 25–40% of the burning flow (60,000–85,000 t). The effect is real but does not close the problem completely.</div>
+
+    <h2>10. Recommendations to Companies (Short-Term, 0–12 Months)</h2>
     <ol>
-      <li><strong>Increase collection</strong> — create a network of receiving points in industrial regions (Aktobe, Karaganda, Atyrau).</li>
-      <li><strong>Legalise processing</strong> — simplify licensing for small processors while maintaining environmental standards.</li>
-      <li><strong>Monitoring</strong> — field measurements of emissions from boilers running on illegal fuel.</li>
-      <li><strong>Pilot units</strong> — modular processors (1 t/day) with pre-treatment in 3–4 regions.</li>
+      <li><strong>Boiler houses and industrial facilities:</strong> install dust and gas cleaning filters on existing boilers; stop burning waste oil, tyres, bitumen, fuel oil; conclude contracts for waste oil removal with licensed collectors.</li>
+      <li><strong>Collectors and processors:</strong> organise oil receiving points in each industrial region; implement pre-treatment of oil before biodiesel processing; launch pilot mini-plants (1 t/day) in 2–3 regions to test the scheme.</li>
+      <li><strong>Service and transport companies:</strong> hand over waste oil only under contract, with transfer acts; keep records of oil generation and transfer.</li>
+      <li><strong>Investors and mini-plant operators:</strong> replicate modular units according to the scheme (regions × 6 units); ensure pre-treatment of feedstock for stable biodiesel yield.</li>
     </ol>
 
-    <h2>6. Limitations</h2>
+    <h2>11. Limitations</h2>
     <ol>
       <li>The calculation is not official and cannot be used for legal claims.</li>
       <li>Specific emissions are taken from international reference books, not from measurements at Kazakh boilers.</li>
       <li>The "50% burning" assumption is a hypothesis, not confirmed statistics.</li>
       <li>Damage from dumping into groundwater has not been calculated due to lack of monitoring data.</li>
+      <li>The scheme of 102 units × 1 t/day is illustrative; actual capacity depends on collection logistics and feedstock quality.</li>
+    </ol>
+
+    <h2>12. Next Steps (Internal)</h2>
+    <ol>
+      <li>Request from the authorised bodies actual collection volumes for 2020–2025 to verify the balance.</li>
+      <li>Initiate field measurements of emissions from boilers (PM, NOx, SO₂, Pb).</li>
+      <li>Conduct soil and groundwater sampling in areas of mass burning.</li>
+      <li>Launch a pilot mini-plant (1 t/day) and measure actual biodiesel yield after pre-treatment.</li>
+      <li>After obtaining data — recalculate the report according to national methodologies.</li>
     </ol>
 
     <div class="signature">
