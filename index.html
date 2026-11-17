@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Water Ecology Map — Claimed vs Actual</title>
-<link rel="icon" href="water-icon-loss.png" type="image/png">
+<title>Oil & Gas Ecology Map — Claimed vs Actual</title>
+<meta name="description" content="Open database of oil & gas gaps: flaring, methane leaks, spills, waste, fake reclamation. Verified via VIIRS, TROPOMI, Sentinel.">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <div class="logo"><img src="water-logo.png" alt="Water Logo"> Water Ecology Map</div>
+  <div class="logo">Oil & Gas Ecology Map</div>
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="map.html">Map</a>
@@ -25,12 +26,10 @@
 </header>
 <main>
   <section class="hero">
-    <h1>Water: <span class="red">Claimed</span> vs <span class="green">Actual</span></h1>
-    <p>Open database of water pollution, spills, depletion, and false restoration. Verified via satellite data. No source — no publication.</p>
+    <h1>Oil & Gas: <span class="red">Claimed</span> vs <span class="green">Actual</span></h1>
+    <p>Open database of flaring, methane leaks, spills, waste, and fake reclamation. Verified via satellite data. No source — no publication.</p>
   </section>
-  
   <section class="stats" id="stats"></section>
-  
   <div class="filters">
     <select id="filter-status">
       <option value="">All statuses</option>
@@ -40,198 +39,23 @@
     </select>
     <select id="filter-region">
       <option value="">All regions</option>
-      <option>Africa</option>
-      <option>Asia</option>
-      <option>Central Asia</option>
-      <option>Europe</option>
-      <option>North America</option>
-      <option>South America</option>
-      <option>Oceania</option>
-      <option>Middle East</option>
-      <option>Global</option>
+      <option>Africa</option><option>Asia</option><option>Europe</option>
+      <option>North America</option><option>South America</option>
+      <option>Oceania</option><option>Middle East</option>
     </select>
-    <input id="filter-search" type="search" placeholder="Search river, country...">
+    <input id="filter-search" type="search" placeholder="Search country, company...">
   </div>
-  
   <div class="legend">
     <span><i class="dot red"></i> 🔴 Gap confirmed</span>
     <span><i class="dot green"></i> 🟢 Verified</span>
     <span><i class="dot gray"></i> ⚫ Pending verification</span>
   </div>
-  
   <section id="cards" class="grid"></section>
   <div id="pagination" class="pagination"></div>
-
-  <!-- БЛОК IFI PROJECT TRACKER -->
-  <section class="detail-block" style="border-left: 4px solid var(--gold); margin-top: 50px;">
-    <h2>Global Water Projects (IFI Tracker)</h2>
-    <p style="color:var(--muted); margin-bottom: 20px;">
-      Track water-related projects funded by International Financial Institutions (IFIs). 
-      If a project is approved but shows no satellite-verified progress, it belongs on our Gap Map.
-    </p>
-
-    <h3>Central Asia (CA) — Water Supply Projects</h3>
-    <table style="width:100%; margin-bottom: 25px;">
-      <thead><tr><th>Institution</th><th>Project</th><th>Focus</th><th>Link</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>World Bank</strong></td>
-          <td>Central Asia Water Efficiency Cooperation (CAWEC)</td>
-          <td>Transboundary water efficiency ($20M IDA Grant)</td>
-          <td><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P515897" target="_blank">View Project →</a></td>
-        </tr>
-        <tr>
-          <td><strong>World Bank</strong></td>
-          <td>Uzbekistan National Irrigation & Energy Efficiency (NIEEIP)</td>
-          <td>Irrigation modernization ($200M)</td>
-          <td><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P504600" target="_blank">View Project →</a></td>
-        </tr>
-        <tr>
-          <td><strong>ADB</strong></td>
-          <td>Glaciers to Farms (Central Asia)</td>
-          <td>Climate adaptation for glacier-fed basins ($3.25B program)</td>
-          <td><a href="https://www.adb.org/news/green-climate-fund-approves-250-million-adb-glacial-melt-adaptation-program-central-asia-south" target="_blank">View Program →</a></td>
-        </tr>
-        <tr>
-          <td><strong>ADB</strong></td>
-          <td>Yesil River Basin Solutions (Kazakhstan)</td>
-          <td>Flood risk reduction & dam safety</td>
-          <td><a href="https://www.adb.org/projects/59509-002/main" target="_blank">View Project →</a></td>
-        </tr>
-        <tr>
-          <td><strong>EBRD</strong></td>
-          <td>Resilient Water Systems (Kyrgyz Republic & Tajikistan)</td>
-          <td>Climate-resilient water supply (€100M EBRD + €55M GCF)</td>
-          <td><a href="https://www.ebrd.com/home/news-and-events/news/2026/ebrd-and-gcf-launch-climate-resilience-programme-for-water-syste.html" target="_blank">View Program →</a></td>
-        </tr>
-        <tr>
-          <td><strong>EBRD</strong></td>
-          <td>Kulob Water & Wastewater (Tajikistan)</td>
-          <td>Clean water access for 100,000+ people (€6.2M)</td>
-          <td><a href="https://www.ebrd.com/home/news-and-events/news/2026/ebrd-channels-eur-554-million-to-infrastructure-projects-in-tajikistan.html" target="_blank">View Project →</a></td>
-        </tr>
-        
-        <!-- ОТЧЕТЫ ПО ТРУБАМ В ЦА -->
-        <tr>
-          <td><strong>EcoAudit CA</strong></td>
-          <td>Modular Composite Pipe Plants (Uzbekistan)</td>
-          <td>Trunk main replacement & water loss reduction ($523M/yr)</td>
-          <td><a href="report-pipes-uz.html" class="btn-primary" style="padding: 4px 10px; font-size: 12px; margin-top: 0; background: var(--green); color: #000;">Read Report →</a></td>
-        </tr>
-        <tr>
-          <td><strong>EcoAudit CA</strong></td>
-          <td>Modular Composite Pipe Plants (Kazakhstan)</td>
-          <td>Drinking water losses & economic justification ($892M/yr)</td>
-          <td><a href="report-pipes-kz.html" class="btn-primary" style="padding: 4px 10px; font-size: 12px; margin-top: 0; background: var(--green); color: #000;">Read Report →</a></td>
-        </tr>
-        <tr>
-          <td><strong>EcoAudit CA</strong></td>
-          <td>Modular Composite Pipe Plants (Kyrgyzstan)</td>
-          <td>Drinking water losses & economic justification ($200M/yr)</td>
-          <td><a href="report-pipes-kg.html" class="btn-primary" style="padding: 4px 10px; font-size: 12px; margin-top: 0; background: var(--green); color: #000;">Read Report →</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3>Global / Other Regions — Waste Oil Reports</h3>
-    <table style="width:100%;">
-      <thead><tr><th>Institution</th><th>Project</th><th>Focus</th><th>Link</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>World Bank</strong></td>
-          <td>Water Efficiency and Conservation MPA (Multi-Region)</td>
-          <td>Regional water efficiency framework</td>
-          <td><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P515897" target="_blank">View Framework →</a></td>
-        </tr>
-        <tr>
-          <td><strong>IMF</strong></td>
-          <td>Uzbekistan PIMA with Climate Module</td>
-          <td>Public investment management for water/climate</td>
-          <td><a href="https://www.elibrary.imf.org/view/journals/029/2026/011/article-A001-en.xml" target="_blank">View Report →</a></td>
-        </tr>
-        <!-- ОТЧЕТЫ ПО МАСЛУ -->
-        <tr>
-          <td><strong>EcoAudit CA</strong></td>
-          <td>Preliminary Report: Waste Oils (Uzbekistan)</td>
-          <td>Emissions & damage assessment ($150M–$1.2B)</td>
-          <td><a href="report-oil-uz.html" class="btn-primary" style="padding: 4px 10px; font-size: 12px; margin-top: 0;">Read Report →</a></td>
-        </tr>
-        <tr>
-          <td><strong>EcoAudit CA</strong></td>
-          <td>Preliminary Report: Waste Oils (Kazakhstan)</td>
-          <td>Generation, collection & damage assessment ($72M–$839M)</td>
-          <td><a href="report-oil-kz.html" class="btn-primary" style="padding: 4px 10px; font-size: 12px; margin-top: 0;">Read Report →</a></td>
-        </tr>
-        <tr>
-          <td><strong>EcoAudit CA</strong></td>
-          <td>Preliminary Report: Waste Oils (Tajikistan)</td>
-          <td>Generation & damage assessment ($33M–$257M)</td>
-          <td><a href="report-oil-tj.html" class="btn-primary" style="padding: 4px 10px; font-size: 12px; margin-top: 0;">Read Report →</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- БЛОКИ ОТЧЁТОВ ПО ТРУБАМ (ЗЕЛЁНЫЕ) -->
-  <section class="detail-block" style="border: 2px solid var(--green); background: rgba(77, 255, 136, 0.05); margin-top: 30px; text-align: center;">
-    <h2 style="color: var(--green); margin-top: 0;">🟢 New Report: Systemic Water Supply Problems & Composite Pipes (Uzbekistan)</h2>
-    <p style="max-width: 800px; margin: 0 auto 20px auto; color: var(--text); font-size: 16px;">
-      Economic justification for replacing worn-out trunk mains and transitioning to local production of composite pipes. 
-      Estimated annual benefit: <strong>$523M+</strong> with 12 modular plants.
-    </p>
-    <a href="report-pipes-uz.html" class="btn-primary" style="background: var(--green); color: #000; font-size: 16px; padding: 14px 34px;">Read Full Report (EN) →</a>
-  </section>
-
-  <section class="detail-block" style="border: 2px solid var(--green); background: rgba(77, 255, 136, 0.05); margin-top: 30px; text-align: center;">
-    <h2 style="color: var(--green); margin-top: 0;">🟢 New Report: Drinking Water Losses & Modular Pipes (Kazakhstan)</h2>
-    <p style="max-width: 800px; margin: 0 auto 20px auto; color: var(--text); font-size: 16px;">
-      Analysis of contradictory data (6.8% official vs 20% actual) and economic justification for 20 modular plants. 
-      Estimated annual benefit: <strong>$892M</strong>.
-    </p>
-    <a href="report-pipes-kz.html" class="btn-primary" style="background: var(--green); color: #000; font-size: 16px; padding: 14px 34px;">Read Full Report (EN) →</a>
-  </section>
-
-  <section class="detail-block" style="border: 2px solid var(--green); background: rgba(77, 255, 136, 0.05); margin-top: 30px; text-align: center;">
-    <h2 style="color: var(--green); margin-top: 0;">🟢 New Report: Drinking Water Losses & Modular Pipes (Kyrgyzstan)</h2>
-    <p style="max-width: 800px; margin: 0 auto 20px auto; color: var(--text); font-size: 16px;">
-      Every fourth cubic meter is lost. Economic justification for 9 modular plants to address 80% network wear. 
-      Estimated annual benefit: <strong>$200M</strong>.
-    </p>
-    <a href="report-pipes-kg.html" class="btn-primary" style="background: var(--green); color: #000; font-size: 16px; padding: 14px 34px;">Read Full Report (EN) →</a>
-  </section>
-
-  <!-- БЛОКИ ОТЧЁТОВ ПО МАСЛУ (КРАСНЫЕ) -->
-  <section class="detail-block" style="border: 2px solid var(--red); background: rgba(255, 77, 77, 0.05); margin-top: 30px; text-align: center;">
-    <h2 style="color: var(--red); margin-top: 0;">🔴 Report: Waste Oils in Uzbekistan</h2>
-    <p style="max-width: 800px; margin: 0 auto 20px auto; color: var(--text); font-size: 16px;">
-      Preliminary environmental assessment of emissions and damage from burning waste oils in boilers and greenhouses. 
-      Estimated damage: <strong>$150M – $1.2B</strong>. Includes official inspection data and media coverage.
-    </p>
-    <a href="report-oil-uz.html" class="btn-primary" style="background: var(--red); font-size: 16px; padding: 14px 34px;">Read Full Report (EN) →</a>
-  </section>
-
-  <section class="detail-block" style="border: 2px solid var(--red); background: rgba(255, 77, 77, 0.05); margin-top: 30px; text-align: center;">
-    <h2 style="color: var(--red); margin-top: 0;">🔴 Report: Waste Oils in Kazakhstan</h2>
-    <p style="max-width: 800px; margin: 0 auto 20px auto; color: var(--text); font-size: 16px;">
-      Assessment of generation, collection, and damage. Documented criminal case in Aktobe. 
-      Estimated damage: <strong>$72M – $839M</strong>.
-    </p>
-    <a href="report-oil-kz.html" class="btn-primary" style="background: var(--red); font-size: 16px; padding: 14px 34px;">Read Full Report (EN) →</a>
-  </section>
-
-  <section class="detail-block" style="border: 2px solid var(--red); background: rgba(255, 77, 77, 0.05); margin-top: 30px; text-align: center;">
-    <h2 style="color: var(--red); margin-top: 0;">🔴 Report: Waste Oils in Tajikistan</h2>
-    <p style="max-width: 800px; margin: 0 auto 20px auto; color: var(--text); font-size: 16px;">
-      Generation & damage assessment. Confirmed lack of processing infrastructure (acknowledged by the President). 
-      Estimated damage: <strong>$33M – $257M</strong>.
-    </p>
-    <a href="report-oil-tj.html" class="btn-primary" style="background: var(--red); font-size: 16px; padding: 14px 34px;">Read Full Report (EN) →</a>
-  </section>
-
-  <section class="detail-block" style="text-align:center; border-color: var(--gold); margin-top: 40px;">
+  <section class="detail-block" style="text-align:center; border-color: var(--gold);">
     <h2>Support Verification</h2>
-    <p style="max-width: 600px; margin: 0 auto 15px auto;">We accept contributions to cover satellite monitoring and legal defense. Public wallets, multisig, on-chain route.</p>
-    <a href="tokens.html" class="btn-primary">View Tokens & Pay →</a>
+    <p>We accept contributions to cover verification costs. Public wallets, multisig, on-chain route.</p>
+    <p><a href="tokens.html" class="btn-primary">View Tokens & Pay →</a></p>
   </section>
 </main>
 <footer>
@@ -239,7 +63,9 @@
     <a href="eco-token.html">ECO Token</a> ·
     <a href="tokens.html">Tokens & Pay</a> ·
     <a href="treasury.html">Treasury (Solana)</a> ·
-    <a href="methodology.html">Methodology</a>
+    <a href="methodology.html">Methodology</a> ·
+    <a href="signal.html">Submit Signal</a> ·
+    <a href="response.html">Right of Reply</a>
   </p>
 </footer>
 <script src="app.js"></script>
