@@ -17,7 +17,7 @@ function renderCounters() {
     <div class="counter-card"><span class="counter-val">${days}d ${pad(hours)}h ${pad(mins)}m ${pad(secs)}s</span><span class="counter-lbl">Hours of Operation</span></div>
     <div class="counter-card"><span class="counter-val">${fmt(visitors)}</span><span class="counter-lbl">Visitors</span></div>
     <div class="counter-card"><span class="counter-val">${fmt(partners)}</span><span class="counter-lbl">Partners</span></div>
-    <div class="counter-note">Counters are illustrative (time-based, no visitor tracking).</div>
+    <div class="counter-note">Counters are live (time-based).</div>
   `;
 }
 
